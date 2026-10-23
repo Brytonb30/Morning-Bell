@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fresh Roasted | Morning Bell Coffee Roasters</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8f1e7;
+      color: #482514;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 7%;
+      background: #fffaf3;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #482514;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 35px;
+      padding: 65px 8%;
+      min-height: 570px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(54px, 7vw, 100px);
+      line-height: .88;
+      letter-spacing: -5px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    h1 span {
+      display: block;
+    }
+
+    .description {
+      font-size: 16px;
+      line-height: 1.8;
+      max-width: 420px;
+      margin-bottom: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #482514;
+      color: #fffaf3;
+      padding: 16px 25px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      border: 2px solid #482514;
+      transition: .2s;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: #482514;
+    }
+
+    .product-image {
+      width: 100%;
+      min-height: 400px;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
+    .message {
+      background: #482514;
+      color: #fffaf3;
+      text-align: center;
+      padding: 65px 20px;
+    }
+
+    .message h2 {
+      font-size: clamp(30px, 5vw, 52px);
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .message p {
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.8;
+    }
+
+    .details {
+      padding: 65px 8%;
+      text-align: center;
+    }
+
+    .details h2 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .details p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 25px;
+      text-align: center;
+      background: #fffaf3;
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        justify-content: center;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 45px 7%;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      .product-image {
+        min-height: 300px;
+        max-height: 420px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">MORNING BELL ☕</div>
+
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="ads.html">OUR ADS</a>
+      <a href="#discover">DISCOVER OUR COFFEE</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR NEW COFFEE OBSESSION</p>
+
+        <h1>
+          <span>FRESH</span>
+          <span>ROASTED.</span>
+        </h1>
+
+        <p class="description">
+          Meet Morning Bell Coffee Roasters. Discover a
+          coffee brand made for your everyday ritual, from
+          your first sip to your favorite iced coffee.
+        </p>
+
+        <a class="button" href="#discover">DISCOVER MORNING BELL</a>
+      </div>
+
+      <img
+        class="product-image"
+        src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1000&q=85"
+        alt="Freshly prepared iced coffee"
+      >
+    </section>
+
+    <section class="message" id="discover">
+      <p class="eyebrow">MEET YOUR NEW FAVORITE</p>
+      <h2>Good Coffee.<br>Fresh Perspective.</h2>
+      <p>
+        Your coffee routine deserves something worth
+        looking forward to. Get to know Morning Bell
+        Coffee Roasters and discover your next favorite sip.
+      </p>
+    </section>
+
+    <section class="details">
+      <h2>Make It a Morning Bell Morning.</h2>
+      <p>
+        From coffee lovers to everyday coffee drinkers,
+        we're here to make Morning Bell a name worth
+        remembering. Explore the brand and find your
+        next coffee moment.
+      </p>
+      <a class="button" href="ads.html">EXPLORE OUR CAMPAIGN</a>
+    </section>
+  </main>
+
+  <footer>
+    MORNING BELL COFFEE ROASTERS · FRESH ROASTED, EVERY DAY
+  </footer>
+</body>
+</html>
