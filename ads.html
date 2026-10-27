@@ -56,7 +56,7 @@
 
     .hero {
       text-align: center;
-      padding: 75px 20px;
+      padding: 65px 20px;
       background: #e8d7c1;
     }
 
@@ -150,17 +150,14 @@
       margin: 8px 0;
     }
 
+    /* Ad gallery */
     .ads-section {
       background: #fffaf3;
     }
 
-    .ad-list {
-      max-width: 1050px;
+    .ad-gallery {
+      max-width: 1100px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 35px;
-      align-items: start;
     }
 
     .ad-card {
@@ -184,19 +181,19 @@
 
     .ad-link {
       display: flex;
-      width: 100%;
       justify-content: center;
       align-items: center;
       margin: 0 auto 15px;
       background: #e8d7c1;
-      border: 2px solid #e8d7c1;
+      border: 1px solid #e8d7c1;
       text-decoration: none;
       overflow: hidden;
-      transition: background 0.2s;
+      transition: background 0.2s, transform 0.2s;
     }
 
     .ad-link:hover {
       background: #dfc5a6;
+      transform: translateY(-2px);
     }
 
     .ad-link img {
@@ -206,18 +203,43 @@
       object-fit: contain;
     }
 
+    /* Leaderboard banner across the page */
+    .leaderboard-card {
+      margin-bottom: 30px;
+    }
+
+    .leaderboard {
+      width: 728px;
+      max-width: 100%;
+      aspect-ratio: 728 / 90;
+    }
+
+    /* Main content with a sidebar */
+    .ad-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 230px;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .main-ad-column {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 25px;
+      align-items: start;
+    }
+
+    .sidebar {
+      display: grid;
+      gap: 25px;
+      align-items: start;
+    }
+
     /* Medium Rectangle: 300 x 250 */
     .medium-rectangle {
       width: 300px;
       max-width: 100%;
       aspect-ratio: 300 / 250;
-    }
-
-    /* Leaderboard: 728 x 90 */
-    .leaderboard {
-      width: 728px;
-      max-width: 100%;
-      aspect-ratio: 728 / 90;
     }
 
     /* Wide Skyscraper: 160 x 600 */
@@ -229,7 +251,7 @@
 
     /* Half Page: 300 x 600 */
     .half-page {
-      width: 300px;
+      width: 200px;
       max-width: 100%;
       aspect-ratio: 300 / 600;
     }
@@ -240,12 +262,19 @@
       margin: 0;
     }
 
-    .benchmark {
-      max-width: 850px;
+    /* Financial estimates */
+    .benchmark-wrap {
+      max-width: 950px;
       margin: 0 auto;
+      overflow-x: auto;
+      background: #fffaf3;
+      border: 1px solid #e8d7c1;
+    }
+
+    .benchmark {
       border-collapse: collapse;
       width: 100%;
-      background: #fffaf3;
+      min-width: 540px;
     }
 
     .benchmark th,
@@ -260,7 +289,7 @@
     }
 
     .note {
-      max-width: 850px;
+      max-width: 950px;
       margin: 15px auto 0;
       font-size: 13px;
       color: #765b48;
@@ -284,7 +313,22 @@
       font-size: 13px;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
+      .ad-layout {
+        grid-template-columns: minmax(0, 1fr) 200px;
+        gap: 20px;
+      }
+
+      .main-ad-column {
+        grid-template-columns: 1fr;
+      }
+
+      .half-page {
+        width: 160px;
+      }
+    }
+
+    @media (max-width: 650px) {
       header {
         justify-content: center;
         text-align: center;
@@ -295,8 +339,27 @@
         gap: 12px;
       }
 
-      .ad-list {
+      .ad-layout {
         grid-template-columns: 1fr;
+      }
+
+      .main-ad-column {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+      }
+
+      .sidebar .ad-card {
+        padding: 12px;
+      }
+
+      .wide-skyscraper,
+      .half-page {
+        width: 100%;
+        max-width: 160px;
       }
 
       .campaign-card {
@@ -311,6 +374,12 @@
       .benchmark td {
         padding: 10px;
         font-size: 13px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .sidebar {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -401,8 +470,11 @@
           The campaign includes four digital display formats:
           Medium Rectangle (300 × 250 px), Leaderboard (728 × 90 px),
           Wide Skyscraper (160 × 600 px), and Half Page (300 × 600 px).
-          Each format presents the campaign message in a different
-          layout while directing visitors to the same landing page.
+          The leaderboard sits across the top of the creative gallery,
+          while the smaller rectangle appears in the main content area.
+          The tall formats are displayed in a sidebar to demonstrate
+          how they could fit alongside website content. Each ad links
+          to the same landing page.
         </p>
       </div>
 
@@ -414,34 +486,18 @@
       <p class="eyebrow">Explore the Creative</p>
       <h2>Our Display Ads</h2>
       <p>
-        Four ad formats, one campaign message. Click any ad to visit
-        the Morning Bell Coffee Roasters landing page.
+        The layout below demonstrates how different display ad sizes
+        can fit into a website. Click any ad to visit the Morning Bell
+        Coffee Roasters landing page.
       </p>
     </div>
 
-    <div class="ad-list">
+    <div class="ad-gallery">
 
-      <!-- Ad 1: Medium Rectangle -->
-      <div class="ad-card">
-        <h3>Medium Rectangle</h3>
-        <p class="ad-size">300 × 250 px</p>
-
-        <a class="ad-link medium-rectangle"
-           href="landing.html"
-           aria-label="Visit the landing page from the Medium Rectangle ad">
-          <img src="Premium%20coffee.png"
-               alt="Morning Bell Coffee medium rectangle advertisement">
-        </a>
-
-        <p class="ad-note">
-          Click the ad to visit our landing page.
-        </p>
-      </div>
-
-      <!-- Ad 2: Leaderboard -->
-      <div class="ad-card">
+      <!-- Leaderboard banner across the top -->
+      <div class="ad-card leaderboard-card">
         <h3>Leaderboard</h3>
-        <p class="ad-size">728 × 90 px</p>
+        <p class="ad-size">728 × 90 px · Typical banner placement</p>
 
         <a class="ad-link leaderboard"
            href="landing.html"
@@ -451,44 +507,84 @@
         </a>
 
         <p class="ad-note">
-          Click the ad to visit our landing page.
+          A wide banner that could appear above website content.
         </p>
       </div>
 
-      <!-- Ad 3: Wide Skyscraper -->
-      <div class="ad-card">
-        <h3>Wide Skyscraper</h3>
-        <p class="ad-size">160 × 600 px</p>
+      <div class="ad-layout">
 
-        <a class="ad-link wide-skyscraper"
-           href="landing.html"
-           aria-label="Visit the landing page from the Wide Skyscraper ad">
-          <img src="Fresh%20Roasted.png"
-               alt="Morning Bell Coffee wide skyscraper advertisement">
-        </a>
+        <!-- Main content area -->
+        <div class="main-ad-column">
 
-        <p class="ad-note">
-          Click the ad to visit our landing page.
-        </p>
+          <div class="ad-card">
+            <h3>Medium Rectangle</h3>
+            <p class="ad-size">300 × 250 px</p>
+
+            <a class="ad-link medium-rectangle"
+               href="landing.html"
+               aria-label="Visit the landing page from the Medium Rectangle ad">
+              <img src="Premium%20coffee.png"
+                   alt="Morning Bell Coffee medium rectangle advertisement">
+            </a>
+
+            <p class="ad-note">
+              A common size for placement within articles or between content sections.
+            </p>
+          </div>
+
+          <div class="ad-card">
+            <h3>Campaign Preview</h3>
+            <p>
+              Each display format uses the same Morning Bell campaign
+              message while adapting the creative to a different
+              advertising space.
+            </p>
+            <p>
+              The goal is to introduce the brand, create recognition,
+              and encourage potential customers to learn more.
+            </p>
+            <a class="button" href="landing.html">DISCOVER OUR COFFEE</a>
+          </div>
+
+        </div>
+
+        <!-- Sidebar ad placements -->
+        <aside class="sidebar" aria-label="Sidebar display ad examples">
+
+          <div class="ad-card">
+            <h3>Wide Skyscraper</h3>
+            <p class="ad-size">160 × 600 px</p>
+
+            <a class="ad-link wide-skyscraper"
+               href="landing.html"
+               aria-label="Visit the landing page from the Wide Skyscraper ad">
+              <img src="Fresh%20Roasted.png"
+                   alt="Morning Bell Coffee wide skyscraper advertisement">
+            </a>
+
+            <p class="ad-note">
+              A tall format designed for a narrow sidebar.
+            </p>
+          </div>
+
+          <div class="ad-card">
+            <h3>Half Page</h3>
+            <p class="ad-size">300 × 600 px</p>
+
+            <a class="ad-link half-page"
+               href="landing.html"
+               aria-label="Visit the landing page from the Half Page ad">
+              <img src="fRESH.png"
+                   alt="Morning Bell Coffee half page advertisement">
+            </a>
+
+            <p class="ad-note">
+              A larger vertical format for a prominent sidebar placement.
+            </p>
+          </div>
+
+        </aside>
       </div>
-
-      <!-- Ad 4: Half Page -->
-      <div class="ad-card">
-        <h3>Half Page</h3>
-        <p class="ad-size">300 × 600 px</p>
-
-        <a class="ad-link half-page"
-           href="landing.html"
-           aria-label="Visit the landing page from the Half Page ad">
-          <img src="fRESH.png"
-               alt="Morning Bell Coffee half page advertisement">
-        </a>
-
-        <p class="ad-note">
-          Click the ad to visit our landing page.
-        </p>
-      </div>
-
     </div>
   </section>
 
@@ -515,52 +611,54 @@
         </p>
       </div>
 
-      <table class="benchmark">
-        <thead>
-          <tr>
-            <th>Metric</th>
-            <th>Industry Benchmark</th>
-            <th>Campaign Estimate</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Average CPM</td>
-            <td>Approximately $5.02*</td>
-            <td>Approximately $5.02</td>
-          </tr>
-          <tr>
-            <td>Average CTR</td>
-            <td>0.12%</td>
-            <td>0.12%</td>
-          </tr>
-          <tr>
-            <td>Average CPC</td>
-            <td>$4.18</td>
-            <td>$4.18</td>
-          </tr>
-          <tr>
-            <td>Conversion rate (CVR)</td>
-            <td>Not reported</td>
-            <td>Not estimated</td>
-          </tr>
-          <tr>
-            <td>Campaign budget</td>
-            <td>—</td>
-            <td>$250 for one month</td>
-          </tr>
-          <tr>
-            <td>Expected impressions</td>
-            <td>—</td>
-            <td>Approximately 49,800</td>
-          </tr>
-          <tr>
-            <td>Expected clicks</td>
-            <td>—</td>
-            <td>Approximately 60</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="benchmark-wrap">
+        <table class="benchmark">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Industry Benchmark</th>
+              <th>Campaign Estimate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Average CPM</td>
+              <td>Approximately $5.02*</td>
+              <td>Approximately $5.02</td>
+            </tr>
+            <tr>
+              <td>Average CTR</td>
+              <td>0.12%</td>
+              <td>0.12%</td>
+            </tr>
+            <tr>
+              <td>Average CPC</td>
+              <td>$4.18</td>
+              <td>$4.18</td>
+            </tr>
+            <tr>
+              <td>Conversion rate (CVR)</td>
+              <td>Not reported</td>
+              <td>Not estimated</td>
+            </tr>
+            <tr>
+              <td>Campaign budget</td>
+              <td>—</td>
+              <td>$250 for one month</td>
+            </tr>
+            <tr>
+              <td>Expected impressions</td>
+              <td>—</td>
+              <td>Approximately 49,800</td>
+            </tr>
+            <tr>
+              <td>Expected clicks</td>
+              <td>—</td>
+              <td>Approximately 60</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <p class="note">
         *The CPM is calculated using the industry's CTR and CPC,
