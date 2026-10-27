@@ -11,28 +11,40 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --dark-brown: #4b3025;
+      --heading-brown: #573927;
+      --button-brown: #6a4430;
+      --text-brown: #3d2b1f;
+      --cream: #f8f2e9;
+      --light-cream: #fffaf4;
+      --tan: #ead8c2;
+      --border-tan: #d8c3ad;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #f8f2e9;
-      color: #3d2b1f;
+      background-color: var(--cream);
+      color: var(--text-brown);
       line-height: 1.6;
     }
 
     header {
-      background-color: #4b3025;
+      background-color: var(--dark-brown);
       color: #fff8ef;
-      padding: 18px 7%;
+      padding: 15px 6%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
     }
 
     header h1 {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.45rem;
+      line-height: 1.3;
     }
 
     nav {
@@ -51,22 +63,22 @@
       color: #e9c9a5;
     }
 
-    /* Leaderboard ad: original 728 x 90 image */
+    /* Top leaderboard ad stays in its original location */
     .top-banner {
       width: 100%;
-      margin: 0;
-      padding: 12px 16px;
+      padding: 10px 16px;
       background-color: #e8d7c1;
       display: flex;
       justify-content: center;
+      align-items: center;
     }
 
     .top-banner a {
       display: block;
       width: 738px;
       max-width: 100%;
+      border: 5px solid var(--dark-brown);
       line-height: 0;
-      border: 5px solid #4b3025;
     }
 
     .top-banner img {
@@ -77,35 +89,41 @@
 
     .hero {
       text-align: center;
-      padding: 38px 7% 32px;
-      background-color: #ead8c2;
+      padding: 30px 6% 28px;
+      background-color: var(--tan);
     }
 
     .hero h2 {
-      margin: 0 0 10px;
-      font-size: clamp(2rem, 4vw, 3rem);
+      margin: 0 0 8px;
+      color: var(--heading-brown);
+      font-size: clamp(2rem, 4vw, 2.7rem);
       line-height: 1.2;
     }
 
     .hero p {
       max-width: 700px;
       margin: 0 auto;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
     }
 
     main {
-      max-width: 1200px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 26px 5%;
+      padding: 24px 28px 30px;
     }
 
     section {
-      margin-bottom: 28px;
+      margin: 0 0 24px;
     }
 
     h2 {
-      color: #573927;
+      color: var(--heading-brown);
       line-height: 1.25;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 12px;
     }
 
     /* Campaign overview and skyscraper ad */
@@ -114,22 +132,33 @@
       grid-template-columns: minmax(0, 1fr) 170px;
       gap: 28px;
       align-items: start;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-tan);
     }
 
     .campaign-copy {
       min-width: 0;
     }
 
-    .campaign-copy h2 {
+    .campaign-copy h2,
+    .content-copy h2 {
       margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.7rem;
+    }
+
+    .campaign-copy p:last-child,
+    .content-copy p:last-of-type {
+      margin-bottom: 0;
     }
 
     .skyscraper-ad {
       width: 170px;
       max-width: 100%;
       justify-self: center;
-      border: 5px solid #4b3025;
+      border: 5px solid var(--dark-brown);
       line-height: 0;
+      background-color: #fffaf4;
     }
 
     .skyscraper-ad a,
@@ -151,6 +180,8 @@
       grid-template-columns: minmax(0, 1fr) 310px;
       gap: 28px;
       align-items: center;
+      padding: 2px 0 22px;
+      border-bottom: 1px solid var(--border-tan);
     }
 
     .content-copy {
@@ -161,7 +192,8 @@
       width: 310px;
       max-width: 100%;
       justify-self: center;
-      border: 5px solid #4b3025;
+      border: 5px solid var(--dark-brown);
+      background-color: #fffaf4;
     }
 
     .medium-ad-area img {
@@ -172,26 +204,27 @@
 
     .cta-button {
       display: inline-block;
-      background-color: #6a4430;
+      background-color: var(--button-brown);
       color: #fff8ef;
-      padding: 12px 22px;
+      padding: 10px 20px;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 10px;
+      margin-top: 6px;
+      transition: background-color 0.2s ease;
     }
 
     .cta-button:hover {
-      background-color: #4b3025;
+      background-color: var(--dark-brown);
     }
 
-    /* Half-page ad centered above financial estimates */
+    /* Half-page ad centered directly before financial estimates */
     .half-page-ad {
       width: 310px;
       max-width: 100%;
-      margin: 24px auto;
-      text-align: center;
-      border: 5px solid #4b3025;
+      margin: 22px auto;
+      border: 5px solid var(--dark-brown);
+      background-color: #fffaf4;
     }
 
     .half-page-ad img {
@@ -202,35 +235,36 @@
     }
 
     .financial-estimates {
-      margin-top: 0;
-      margin-bottom: 30px;
+      margin: 0 0 26px;
+      padding-top: 2px;
     }
 
     .financial-estimates h2 {
       text-align: center;
-      margin-top: 0;
-      margin-bottom: 16px;
+      margin: 0 0 14px;
+      font-size: 1.8rem;
     }
 
     .table-wrapper {
       overflow-x: auto;
+      border: 1px solid var(--border-tan);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      background-color: #fffaf4;
+      background-color: var(--light-cream);
     }
 
     th,
     td {
-      padding: 12px 16px;
-      border: 1px solid #d8c3ad;
+      padding: 10px 14px;
+      border: 1px solid var(--border-tan);
       text-align: left;
     }
 
     th {
-      background-color: #6a4430;
+      background-color: var(--button-brown);
       color: #fff8ef;
     }
 
@@ -241,30 +275,34 @@
     .estimate-note {
       font-size: 0.9rem;
       color: #70594a;
-      margin-top: 10px;
-      margin-bottom: 0;
+      margin: 10px 0 0;
     }
 
     .closing {
       text-align: center;
-      padding: 24px 5%;
-      background-color: #ead8c2;
+      padding: 22px 20px 24px;
+      background-color: var(--tan);
+      border-top: 3px solid var(--dark-brown);
     }
 
     .closing h2 {
-      margin-top: 0;
-      margin-bottom: 8px;
+      margin: 0 0 7px;
+      font-size: 1.65rem;
     }
 
     .closing p {
       margin: 0 0 8px;
     }
 
+    .closing .cta-button {
+      margin-top: 2px;
+    }
+
     footer {
-      background-color: #4b3025;
+      background-color: var(--dark-brown);
       color: #fff8ef;
       text-align: center;
-      padding: 14px;
+      padding: 13px 16px;
       font-size: 0.9rem;
     }
 
@@ -272,32 +310,49 @@
       margin: 0;
     }
 
-    /* Mobile layout */
     @media (max-width: 750px) {
       header {
         flex-direction: column;
         text-align: center;
+        padding: 15px 5%;
+        gap: 12px;
       }
 
       nav {
         justify-content: center;
+        gap: 16px;
+      }
+
+      .top-banner {
+        padding: 9px 12px;
+      }
+
+      .top-banner a {
+        width: 100%;
+        max-width: 738px;
       }
 
       .hero {
-        padding: 30px 6% 26px;
+        padding: 26px 6% 24px;
       }
 
       main {
-        padding: 22px 5%;
+        padding: 20px 5% 24px;
       }
 
       section {
-        margin-bottom: 24px;
+        margin-bottom: 22px;
       }
 
       .campaign-layout {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 16px;
+        padding-bottom: 20px;
+      }
+
+      .campaign-copy h2,
+      .content-copy h2 {
+        font-size: 1.55rem;
       }
 
       .skyscraper-ad {
@@ -306,7 +361,8 @@
 
       .content-with-ad {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 16px;
+        padding-bottom: 20px;
       }
 
       .medium-ad-area {
@@ -314,11 +370,35 @@
       }
 
       .half-page-ad {
-        margin: 22px auto;
+        margin: 20px auto;
+      }
+
+      .financial-estimates h2 {
+        font-size: 1.6rem;
+      }
+
+      th,
+      td {
+        padding: 9px 10px;
       }
 
       .closing {
-        padding: 22px 5%;
+        padding: 21px 5%;
+      }
+    }
+
+    @media (max-width: 380px) {
+      header h1 {
+        font-size: 1.3rem;
+      }
+
+      nav {
+        gap: 12px;
+        font-size: 0.92rem;
+      }
+
+      .cta-button {
+        padding: 10px 15px;
       }
     }
   </style>
