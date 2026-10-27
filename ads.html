@@ -51,17 +51,22 @@
       color: #e9c9a5;
     }
 
+    /* Leaderboard ad: original 728 x 90 image */
     .top-banner {
       width: 100%;
       margin: 0;
-      padding: 0;
+      padding: 12px 16px;
       background-color: #e8d7c1;
+      display: flex;
+      justify-content: center;
     }
 
     .top-banner a {
       display: block;
-      width: 100%;
+      width: 738px;
+      max-width: 100%;
       line-height: 0;
+      border: 5px solid #4b3025;
     }
 
     .top-banner img {
@@ -72,12 +77,12 @@
 
     .hero {
       text-align: center;
-      padding: 55px 7% 45px;
+      padding: 38px 7% 32px;
       background-color: #ead8c2;
     }
 
     .hero h2 {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       font-size: clamp(2rem, 4vw, 3rem);
       line-height: 1.2;
     }
@@ -91,11 +96,11 @@
     main {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 35px 5%;
+      padding: 26px 5%;
     }
 
     section {
-      margin-bottom: 45px;
+      margin-bottom: 28px;
     }
 
     h2 {
@@ -103,10 +108,11 @@
       line-height: 1.25;
     }
 
+    /* Campaign overview and skyscraper ad */
     .campaign-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 160px;
-      gap: 40px;
+      grid-template-columns: minmax(0, 1fr) 170px;
+      gap: 28px;
       align-items: start;
     }
 
@@ -119,9 +125,11 @@
     }
 
     .skyscraper-ad {
-      width: 160px;
+      width: 170px;
       max-width: 100%;
       justify-self: center;
+      border: 5px solid #4b3025;
+      line-height: 0;
     }
 
     .skyscraper-ad a,
@@ -137,10 +145,11 @@
       height: auto;
     }
 
+    /* Reaching Coffee Lovers and medium rectangle */
     .content-with-ad {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 300px;
-      gap: 40px;
+      grid-template-columns: minmax(0, 1fr) 310px;
+      gap: 28px;
       align-items: center;
     }
 
@@ -149,9 +158,10 @@
     }
 
     .medium-ad-area {
-      width: 300px;
+      width: 310px;
       max-width: 100%;
       justify-self: center;
+      border: 5px solid #4b3025;
     }
 
     .medium-ad-area img {
@@ -175,11 +185,13 @@
       background-color: #4b3025;
     }
 
+    /* Half-page ad centered above financial estimates */
     .half-page-ad {
-      width: 300px;
+      width: 310px;
       max-width: 100%;
-      margin: 45px auto;
+      margin: 24px auto;
       text-align: center;
+      border: 5px solid #4b3025;
     }
 
     .half-page-ad img {
@@ -191,11 +203,13 @@
 
     .financial-estimates {
       margin-top: 0;
+      margin-bottom: 30px;
     }
 
     .financial-estimates h2 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-top: 0;
+      margin-bottom: 16px;
     }
 
     .table-wrapper {
@@ -210,7 +224,7 @@
 
     th,
     td {
-      padding: 14px 16px;
+      padding: 12px 16px;
       border: 1px solid #d8c3ad;
       text-align: left;
     }
@@ -227,27 +241,38 @@
     .estimate-note {
       font-size: 0.9rem;
       color: #70594a;
-      margin-top: 12px;
+      margin-top: 10px;
+      margin-bottom: 0;
     }
 
     .closing {
       text-align: center;
-      padding: 30px 5%;
+      padding: 24px 5%;
       background-color: #ead8c2;
     }
 
     .closing h2 {
       margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .closing p {
+      margin: 0 0 8px;
     }
 
     footer {
       background-color: #4b3025;
       color: #fff8ef;
       text-align: center;
-      padding: 20px;
+      padding: 14px;
       font-size: 0.9rem;
     }
 
+    footer p {
+      margin: 0;
+    }
+
+    /* Mobile layout */
     @media (max-width: 750px) {
       header {
         flex-direction: column;
@@ -258,8 +283,21 @@
         justify-content: center;
       }
 
+      .hero {
+        padding: 30px 6% 26px;
+      }
+
+      main {
+        padding: 22px 5%;
+      }
+
+      section {
+        margin-bottom: 24px;
+      }
+
       .campaign-layout {
         grid-template-columns: 1fr;
+        gap: 18px;
       }
 
       .skyscraper-ad {
@@ -268,14 +306,19 @@
 
       .content-with-ad {
         grid-template-columns: 1fr;
+        gap: 18px;
       }
 
       .medium-ad-area {
-        margin: 10px auto 0;
+        margin: 0 auto;
       }
 
       .half-page-ad {
-        margin: 35px auto;
+        margin: 22px auto;
+      }
+
+      .closing {
+        padding: 22px 5%;
       }
     }
   </style>
@@ -356,7 +399,7 @@
 
     </section>
 
-    <!-- Medium rectangle stays in its own section -->
+    <!-- Medium rectangle stays in its original section -->
     <section class="content-with-ad">
 
       <div class="content-copy">
