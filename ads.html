@@ -54,10 +54,34 @@
       text-decoration: underline;
     }
 
+    /* Leaderboard banner directly below navigation */
+    .top-banner {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 20px;
+      background: #e8d7c1;
+    }
+
+    .top-banner a {
+      display: block;
+      width: 728px;
+      max-width: 100%;
+      aspect-ratio: 728 / 90;
+    }
+
+    .top-banner img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
     .hero {
       text-align: center;
       padding: 65px 20px;
-      background: #e8d7c1;
+      background: #fffaf3;
     }
 
     .eyebrow {
@@ -150,7 +174,7 @@
       margin: 8px 0;
     }
 
-    /* Ad gallery */
+    /* Creative gallery */
     .ads-section {
       background: #fffaf3;
     }
@@ -160,40 +184,15 @@
       margin: 0 auto;
     }
 
-    .ad-card {
-      min-width: 0;
-      background: #f8f1e7;
-      padding: 22px;
-      border: 1px solid #e8d7c1;
-      border-radius: 5px;
-      text-align: center;
-    }
-
-    .ad-card h3 {
-      font-size: 20px;
-    }
-
-    .ad-size {
-      color: #765b48;
-      font-size: 13px;
-      margin: 0 0 15px;
-    }
-
     .ad-link {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto 15px;
-      background: #e8d7c1;
-      border: 1px solid #e8d7c1;
-      text-decoration: none;
+      display: block;
+      margin: 0 auto;
       overflow: hidden;
-      transition: background 0.2s, transform 0.2s;
+      transition: opacity 0.2s;
     }
 
     .ad-link:hover {
-      background: #dfc5a6;
-      transform: translateY(-2px);
+      opacity: 0.88;
     }
 
     .ad-link img {
@@ -203,36 +202,16 @@
       object-fit: contain;
     }
 
-    /* Leaderboard banner across the page */
-    .leaderboard-card {
-      margin-bottom: 30px;
+    .ad-size {
+      color: #765b48;
+      font-size: 13px;
+      margin: 0 0 15px;
     }
 
-    .leaderboard {
-      width: 728px;
-      max-width: 100%;
-      aspect-ratio: 728 / 90;
-    }
-
-    /* Main content with a sidebar */
-    .ad-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 230px;
-      gap: 30px;
-      align-items: start;
-    }
-
-    .main-ad-column {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 25px;
-      align-items: start;
-    }
-
-    .sidebar {
-      display: grid;
-      gap: 25px;
-      align-items: start;
+    .ad-note {
+      font-size: 13px;
+      color: #765b48;
+      margin: 12px 0 0;
     }
 
     /* Medium Rectangle: 300 x 250 */
@@ -251,15 +230,58 @@
 
     /* Half Page: 300 x 600 */
     .half-page {
-      width: 200px;
+      width: 300px;
       max-width: 100%;
       aspect-ratio: 300 / 600;
     }
 
-    .ad-note {
-      font-size: 13px;
-      color: #765b48;
-      margin: 0;
+    /* Main content with an ad beside it */
+    .content-with-ad {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .content-copy {
+      padding: 10px 0;
+    }
+
+    .content-copy h2 {
+      margin-top: 0;
+    }
+
+    .content-copy p {
+      margin-bottom: 18px;
+    }
+
+    .medium-ad-area {
+      text-align: center;
+      padding-top: 10px;
+    }
+
+    /* Two tall ads displayed below the main content */
+    .vertical-ads {
+      max-width: 950px;
+      margin: 65px auto 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 45px;
+      align-items: start;
+    }
+
+    .vertical-ad {
+      text-align: center;
+    }
+
+    .vertical-ad h3 {
+      font-size: 20px;
+    }
+
+    .vertical-ad .ad-link {
+      background: #e8d7c1;
     }
 
     /* Financial estimates */
@@ -313,18 +335,14 @@
       font-size: 13px;
     }
 
-    @media (max-width: 900px) {
-      .ad-layout {
-        grid-template-columns: minmax(0, 1fr) 200px;
-        gap: 20px;
+    @media (max-width: 800px) {
+      .content-with-ad {
+        grid-template-columns: minmax(0, 1fr) 250px;
+        gap: 25px;
       }
 
-      .main-ad-column {
-        grid-template-columns: 1fr;
-      }
-
-      .half-page {
-        width: 160px;
+      .vertical-ads {
+        gap: 25px;
       }
     }
 
@@ -339,47 +357,45 @@
         gap: 12px;
       }
 
-      .ad-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .main-ad-column {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        align-items: start;
-      }
-
-      .sidebar .ad-card {
-        padding: 12px;
-      }
-
-      .wide-skyscraper,
-      .half-page {
-        width: 100%;
-        max-width: 160px;
-      }
-
-      .campaign-card {
-        padding: 23px;
+      .hero {
+        padding: 45px 20px;
       }
 
       section {
         padding: 45px 6%;
       }
 
+      .content-with-ad {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .medium-ad-area {
+        padding-top: 0;
+      }
+
+      .vertical-ads {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 45px;
+      }
+
+      .wide-skyscraper {
+        width: 160px;
+      }
+
+      .half-page {
+        width: 220px;
+      }
+
+      .campaign-card {
+        padding: 23px;
+      }
+
       .benchmark th,
       .benchmark td {
         padding: 10px;
         font-size: 13px;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .sidebar {
-        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -396,6 +412,15 @@
       <a href="landing.html">DISCOVER OUR COFFEE</a>
     </nav>
   </header>
+
+  <!-- Leaderboard banner outside of any card or box -->
+  <div class="top-banner">
+    <a href="landing.html"
+       aria-label="Visit the landing page from the Leaderboard banner">
+      <img src="FRESH%20ROASTE.png"
+           alt="Morning Bell Coffee Roasters leaderboard banner advertisement">
+    </a>
+  </div>
 
   <section class="hero">
     <p class="eyebrow">The Morning Bell Campaign</p>
@@ -470,11 +495,10 @@
           The campaign includes four digital display formats:
           Medium Rectangle (300 × 250 px), Leaderboard (728 × 90 px),
           Wide Skyscraper (160 × 600 px), and Half Page (300 × 600 px).
-          The leaderboard sits across the top of the creative gallery,
-          while the smaller rectangle appears in the main content area.
-          The tall formats are displayed in a sidebar to demonstrate
-          how they could fit alongside website content. Each ad links
-          to the same landing page.
+          The leaderboard is placed across the top of the page. The
+          Medium Rectangle appears alongside content, while the two
+          vertical formats demonstrate sidebar-style ad placements.
+          All ads direct visitors to the same landing page.
         </p>
       </div>
 
@@ -486,104 +510,82 @@
       <p class="eyebrow">Explore the Creative</p>
       <h2>Our Display Ads</h2>
       <p>
-        The layout below demonstrates how different display ad sizes
-        can fit into a website. Click any ad to visit the Morning Bell
-        Coffee Roasters landing page.
+        Each ad is designed for a different digital placement while
+        keeping the same Morning Bell campaign message.
       </p>
     </div>
 
     <div class="ad-gallery">
 
-      <!-- Leaderboard banner across the top -->
-      <div class="ad-card leaderboard-card">
-        <h3>Leaderboard</h3>
-        <p class="ad-size">728 × 90 px · Typical banner placement</p>
+      <!-- Medium Rectangle beside the main content -->
+      <div class="content-with-ad">
 
-        <a class="ad-link leaderboard"
-           href="landing.html"
-           aria-label="Visit the landing page from the Leaderboard ad">
-          <img src="FRESH%20ROASTE.png"
-               alt="Morning Bell Coffee leaderboard advertisement">
-        </a>
-
-        <p class="ad-note">
-          A wide banner that could appear above website content.
-        </p>
-      </div>
-
-      <div class="ad-layout">
-
-        <!-- Main content area -->
-        <div class="main-ad-column">
-
-          <div class="ad-card">
-            <h3>Medium Rectangle</h3>
-            <p class="ad-size">300 × 250 px</p>
-
-            <a class="ad-link medium-rectangle"
-               href="landing.html"
-               aria-label="Visit the landing page from the Medium Rectangle ad">
-              <img src="Premium%20coffee.png"
-                   alt="Morning Bell Coffee medium rectangle advertisement">
-            </a>
-
-            <p class="ad-note">
-              A common size for placement within articles or between content sections.
-            </p>
-          </div>
-
-          <div class="ad-card">
-            <h3>Campaign Preview</h3>
-            <p>
-              Each display format uses the same Morning Bell campaign
-              message while adapting the creative to a different
-              advertising space.
-            </p>
-            <p>
-              The goal is to introduce the brand, create recognition,
-              and encourage potential customers to learn more.
-            </p>
-            <a class="button" href="landing.html">DISCOVER OUR COFFEE</a>
-          </div>
-
+        <div class="content-copy">
+          <p class="eyebrow">A Better Start to Your Day</p>
+          <h2>Fresh Coffee for Your Daily Routine.</h2>
+          <p>
+            Morning Bell Coffee Roasters brings a fresh perspective
+            to your everyday coffee routine. Our campaign introduces
+            the brand through warm visuals and a memorable message
+            designed to connect with coffee drinkers.
+          </p>
+          <p>
+            The Medium Rectangle ad is shown beside this content to
+            demonstrate how a 300 × 250 display ad could appear next
+            to an article, story, or other website content.
+          </p>
+          <a class="button" href="landing.html">DISCOVER OUR COFFEE</a>
         </div>
 
-        <!-- Sidebar ad placements -->
-        <aside class="sidebar" aria-label="Sidebar display ad examples">
+        <div class="medium-ad-area">
+          <a class="ad-link medium-rectangle"
+             href="landing.html"
+             aria-label="Visit the landing page from the Medium Rectangle ad">
+            <img src="Premium%20coffee.png"
+                 alt="Morning Bell Coffee medium rectangle advertisement">
+          </a>
+          <p class="ad-note">
+            Medium Rectangle · 300 × 250 px
+          </p>
+        </div>
 
-          <div class="ad-card">
-            <h3>Wide Skyscraper</h3>
-            <p class="ad-size">160 × 600 px</p>
+      </div>
 
-            <a class="ad-link wide-skyscraper"
-               href="landing.html"
-               aria-label="Visit the landing page from the Wide Skyscraper ad">
-              <img src="Fresh%20Roasted.png"
-                   alt="Morning Bell Coffee wide skyscraper advertisement">
-            </a>
+      <!-- Tall display ads, no surrounding ad cards -->
+      <div class="vertical-ads">
 
-            <p class="ad-note">
-              A tall format designed for a narrow sidebar.
-            </p>
-          </div>
+        <div class="vertical-ad">
+          <h3>Wide Skyscraper</h3>
+          <p class="ad-size">160 × 600 px</p>
 
-          <div class="ad-card">
-            <h3>Half Page</h3>
-            <p class="ad-size">300 × 600 px</p>
+          <a class="ad-link wide-skyscraper"
+             href="landing.html"
+             aria-label="Visit the landing page from the Wide Skyscraper ad">
+            <img src="Fresh%20Roasted.png"
+                 alt="Morning Bell Coffee wide skyscraper advertisement">
+          </a>
 
-            <a class="ad-link half-page"
-               href="landing.html"
-               aria-label="Visit the landing page from the Half Page ad">
-              <img src="fRESH.png"
-                   alt="Morning Bell Coffee half page advertisement">
-            </a>
+          <p class="ad-note">
+            A tall, narrow ad suited to a website sidebar.
+          </p>
+        </div>
 
-            <p class="ad-note">
-              A larger vertical format for a prominent sidebar placement.
-            </p>
-          </div>
+        <div class="vertical-ad">
+          <h3>Half Page</h3>
+          <p class="ad-size">300 × 600 px</p>
 
-        </aside>
+          <a class="ad-link half-page"
+             href="landing.html"
+             aria-label="Visit the landing page from the Half Page ad">
+            <img src="fRESH.png"
+                 alt="Morning Bell Coffee half page advertisement">
+          </a>
+
+          <p class="ad-note">
+            A larger vertical ad designed for a more prominent placement.
+          </p>
+        </div>
+
       </div>
     </div>
   </section>
