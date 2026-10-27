@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Morning Bell Coffee Roasters | Ad Campaign</title>
+  <title>Morning Bell Coffee Roasters | Our Ads</title>
 
   <style>
     * {
@@ -12,73 +12,85 @@
     }
 
     :root {
-      --dark-brown: #4b3025;
-      --heading-brown: #573927;
-      --button-brown: #6a4430;
-      --text-brown: #3d2b1f;
+      --brown: #4b3025;
+      --brown-light: #6a4430;
+      --brown-heading: #573927;
       --cream: #f8f2e9;
-      --light-cream: #fffaf4;
+      --cream-light: #fffaf4;
       --tan: #ead8c2;
-      --border-tan: #d8c3ad;
+      --tan-deep: #e8d7c1;
+      --border: #d8c3ad;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background-color: var(--cream);
-      color: var(--text-brown);
-      line-height: 1.6;
+      background: var(--cream);
+      color: var(--brown);
+      line-height: 1.65;
     }
 
+    /* Navigation */
     header {
-      background-color: var(--dark-brown);
+      background: var(--brown);
       color: #fff8ef;
-      padding: 15px 6%;
+      padding: 17px 6%;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      align-items: center;
+      gap: 20px;
       flex-wrap: wrap;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.45rem;
-      line-height: 1.3;
+    .brand {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
     }
 
     nav {
       display: flex;
-      gap: 22px;
+      align-items: center;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
     nav a {
       color: #fff8ef;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a[aria-current="page"] {
       color: #e9c9a5;
+      border-bottom-color: #e9c9a5;
     }
 
-    /* Top leaderboard ad stays in its original location */
+    /* Leaderboard remains at the very top of the page content */
     .top-banner {
-      width: 100%;
-      padding: 10px 16px;
-      background-color: #e8d7c1;
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 12px 16px;
+      background: var(--tan-deep);
     }
 
     .top-banner a {
       display: block;
       width: 738px;
       max-width: 100%;
-      border: 5px solid var(--dark-brown);
       line-height: 0;
+      border: 5px solid var(--brown);
+      background: var(--cream-light);
     }
 
     .top-banner img {
@@ -87,78 +99,114 @@
       height: auto;
     }
 
+    /* Bold hero section */
     .hero {
+      background: var(--tan);
       text-align: center;
-      padding: 30px 6% 28px;
-      background-color: var(--tan);
+      padding: 42px 20px 38px;
+      border-bottom: 5px solid var(--brown);
     }
 
-    .hero h2 {
-      margin: 0 0 8px;
-      color: var(--heading-brown);
-      font-size: clamp(2rem, 4vw, 2.7rem);
-      line-height: 1.2;
+    .eyebrow {
+      margin: 0 0 10px;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: var(--brown-light);
+    }
+
+    .hero h1 {
+      max-width: 850px;
+      margin: 0 auto 12px;
+      color: var(--brown);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -1.5px;
     }
 
     .hero p {
-      max-width: 700px;
+      max-width: 650px;
       margin: 0 auto;
       font-size: 1.05rem;
     }
 
-    main {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 24px 28px 30px;
+    .hero-rule {
+      width: 65px;
+      height: 4px;
+      background: var(--brown-light);
+      margin: 22px auto 0;
     }
 
-    section {
-      margin: 0 0 24px;
+    /* Main page layout */
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 32px 42px;
+    }
+
+    .section-kicker {
+      margin: 0 0 8px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.73rem;
+      font-weight: 800;
+      color: var(--brown-light);
     }
 
     h2 {
-      color: var(--heading-brown);
-      line-height: 1.25;
+      color: var(--brown-heading);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.2;
     }
 
     p {
       margin-top: 0;
-      margin-bottom: 12px;
     }
 
-    /* Campaign overview and skyscraper ad */
+    /* Campaign overview: large copy area + skyscraper ad */
     .campaign-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 170px;
-      gap: 28px;
+      grid-template-columns: minmax(0, 1fr) 180px;
+      gap: 38px;
       align-items: start;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border-tan);
+      padding: 0 0 32px;
+      border-bottom: 1px solid var(--border);
     }
 
     .campaign-copy {
       min-width: 0;
     }
 
-    .campaign-copy h2,
-    .content-copy h2 {
-      margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 1.7rem;
+    .campaign-copy h2 {
+      margin: 0 0 18px;
+      font-size: clamp(2rem, 4vw, 2.8rem);
     }
 
-    .campaign-copy p:last-child,
-    .content-copy p:last-of-type {
+    .campaign-copy p {
+      margin-bottom: 14px;
+    }
+
+    .campaign-copy p:last-child {
       margin-bottom: 0;
+    }
+
+    /* Shared dark-brown ad outline */
+    .skyscraper-ad,
+    .medium-ad-area,
+    .half-page-ad {
+      border: 5px solid var(--brown);
+      background: var(--cream-light);
+      line-height: 0;
+      box-shadow: 5px 5px 0 rgba(75, 48, 37, 0.12);
     }
 
     .skyscraper-ad {
       width: 170px;
-      max-width: 100%;
       justify-self: center;
-      border: 5px solid var(--dark-brown);
-      line-height: 0;
-      background-color: #fffaf4;
+      margin-top: 6px;
     }
 
     .skyscraper-ad a,
@@ -168,141 +216,168 @@
       line-height: 0;
     }
 
-    .skyscraper-ad img {
+    .skyscraper-ad img,
+    .medium-ad-area img,
+    .half-page-ad img {
       display: block;
       width: 100%;
       height: auto;
     }
 
-    /* Reaching Coffee Lovers and medium rectangle */
+    /* Second editorial row */
     .content-with-ad {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 310px;
-      gap: 28px;
+      gap: 38px;
       align-items: center;
-      padding: 2px 0 22px;
-      border-bottom: 1px solid var(--border-tan);
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
     }
 
     .content-copy {
       min-width: 0;
+      padding: 0 0 0 4px;
+    }
+
+    .content-copy h2 {
+      margin: 0 0 16px;
+      font-size: clamp(1.9rem, 3vw, 2.5rem);
+    }
+
+    .content-copy p {
+      max-width: 600px;
+      margin-bottom: 14px;
     }
 
     .medium-ad-area {
       width: 310px;
       max-width: 100%;
       justify-self: center;
-      border: 5px solid var(--dark-brown);
-      background-color: #fffaf4;
-    }
-
-    .medium-ad-area img {
-      display: block;
-      width: 100%;
-      height: auto;
     }
 
     .cta-button {
       display: inline-block;
-      background-color: var(--button-brown);
+      margin-top: 5px;
+      padding: 12px 22px;
+      background: var(--brown-light);
       color: #fff8ef;
-      padding: 10px 20px;
-      border-radius: 5px;
       text-decoration: none;
-      font-weight: bold;
-      margin-top: 6px;
-      transition: background-color 0.2s ease;
+      font-weight: 700;
+      border: 2px solid var(--brown-light);
+      transition: background 0.2s, color 0.2s;
     }
 
     .cta-button:hover {
-      background-color: var(--dark-brown);
+      background: var(--cream-light);
+      color: var(--brown);
     }
 
-    /* Half-page ad centered directly before financial estimates */
+    /* Half-page ad featured between campaign and estimates */
+    .half-page-section {
+      padding: 30px 0 32px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .half-page-section .section-kicker {
+      margin-bottom: 12px;
+    }
+
     .half-page-ad {
       width: 310px;
       max-width: 100%;
-      margin: 22px auto;
-      border: 5px solid var(--dark-brown);
-      background-color: #fffaf4;
-    }
-
-    .half-page-ad img {
-      display: block;
-      width: 100%;
-      height: auto;
       margin: 0 auto;
     }
 
+    /* Financial estimates */
     .financial-estimates {
-      margin: 0 0 26px;
-      padding-top: 2px;
+      padding: 32px 0 0;
     }
 
-    .financial-estimates h2 {
+    .financial-heading {
       text-align: center;
-      margin: 0 0 14px;
-      font-size: 1.8rem;
+      margin-bottom: 22px;
+    }
+
+    .financial-heading h2 {
+      font-size: clamp(2rem, 4vw, 2.7rem);
+      margin: 0 0 8px;
+    }
+
+    .financial-heading p {
+      max-width: 620px;
+      margin: 0 auto;
+      color: #70594a;
     }
 
     .table-wrapper {
       overflow-x: auto;
-      border: 1px solid var(--border-tan);
+      border: 2px solid var(--brown);
+      background: var(--cream-light);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      background-color: var(--light-cream);
+      background: var(--cream-light);
     }
 
     th,
     td {
-      padding: 10px 14px;
-      border: 1px solid var(--border-tan);
+      padding: 13px 17px;
+      border-bottom: 1px solid var(--border);
       text-align: left;
     }
 
     th {
-      background-color: var(--button-brown);
+      background: var(--brown);
       color: #fff8ef;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
     }
 
     tbody tr:nth-child(even) {
-      background-color: #f0e4d6;
+      background: #f0e4d6;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
     }
 
     .estimate-note {
-      font-size: 0.9rem;
+      margin: 12px 0 0;
+      font-size: 0.88rem;
       color: #70594a;
-      margin: 10px 0 0;
     }
 
+    /* Closing call to action */
     .closing {
+      margin-top: 38px;
+      padding: 34px 20px;
       text-align: center;
-      padding: 22px 20px 24px;
-      background-color: var(--tan);
-      border-top: 3px solid var(--dark-brown);
+      background: var(--tan);
+      border: 2px solid var(--brown);
     }
 
     .closing h2 {
-      margin: 0 0 7px;
-      font-size: 1.65rem;
+      margin: 0 0 10px;
+      font-size: clamp(1.7rem, 3vw, 2.3rem);
     }
 
     .closing p {
-      margin: 0 0 8px;
+      max-width: 580px;
+      margin: 0 auto 12px;
     }
 
     .closing .cta-button {
-      margin-top: 2px;
+      margin-top: 0;
     }
 
     footer {
-      background-color: var(--dark-brown);
+      background: var(--brown);
       color: #fff8ef;
       text-align: center;
-      padding: 13px 16px;
+      padding: 16px 20px;
       font-size: 0.9rem;
     }
 
@@ -310,95 +385,117 @@
       margin: 0;
     }
 
-    @media (max-width: 750px) {
+    /* Tablet and mobile */
+    @media (max-width: 800px) {
       header {
-        flex-direction: column;
+        justify-content: center;
         text-align: center;
-        padding: 15px 5%;
-        gap: 12px;
       }
 
       nav {
         justify-content: center;
-        gap: 16px;
+        gap: 18px;
+      }
+
+      main {
+        padding: 28px 22px 34px;
+      }
+
+      .campaign-layout {
+        grid-template-columns: minmax(0, 1fr) 150px;
+        gap: 24px;
+      }
+
+      .skyscraper-ad {
+        width: 150px;
+      }
+
+      .content-with-ad {
+        grid-template-columns: minmax(0, 1fr) 270px;
+        gap: 24px;
+      }
+
+      .medium-ad-area {
+        width: 270px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      header {
+        padding: 16px 5%;
+      }
+
+      .brand {
+        font-size: 1.2rem;
+      }
+
+      nav {
+        gap: 14px;
+        font-size: 0.9rem;
       }
 
       .top-banner {
         padding: 9px 12px;
       }
 
-      .top-banner a {
-        width: 100%;
-        max-width: 738px;
+      .hero {
+        padding: 34px 20px 30px;
       }
 
-      .hero {
-        padding: 26px 6% 24px;
+      .hero h1 {
+        letter-spacing: -0.7px;
       }
 
       main {
-        padding: 20px 5% 24px;
-      }
-
-      section {
-        margin-bottom: 22px;
+        padding: 24px 18px 30px;
       }
 
       .campaign-layout {
         grid-template-columns: 1fr;
-        gap: 16px;
-        padding-bottom: 20px;
+        gap: 22px;
+        padding-bottom: 26px;
       }
 
-      .campaign-copy h2,
-      .content-copy h2 {
-        font-size: 1.55rem;
+      .campaign-copy h2 {
+        margin-bottom: 14px;
       }
 
       .skyscraper-ad {
+        width: 160px;
         margin: 0 auto;
       }
 
       .content-with-ad {
         grid-template-columns: 1fr;
-        gap: 16px;
-        padding-bottom: 20px;
+        gap: 22px;
+        padding: 26px 0;
+      }
+
+      .content-copy {
+        padding: 0;
       }
 
       .medium-ad-area {
-        margin: 0 auto;
+        width: 300px;
       }
 
-      .half-page-ad {
-        margin: 20px auto;
+      .half-page-section {
+        padding: 25px 0;
       }
 
-      .financial-estimates h2 {
-        font-size: 1.6rem;
+      .financial-estimates {
+        padding-top: 26px;
       }
 
       th,
       td {
-        padding: 9px 10px;
+        padding: 10px 12px;
+        font-size: 0.9rem;
       }
 
       .closing {
-        padding: 21px 5%;
-      }
-    }
-
-    @media (max-width: 380px) {
-      header h1 {
-        font-size: 1.3rem;
-      }
-
-      nav {
-        gap: 12px;
-        font-size: 0.92rem;
-      }
-
-      .cta-button {
-        padding: 10px 15px;
+        margin-top: 28px;
+        padding: 28px 16px;
       }
     }
   </style>
@@ -407,16 +504,16 @@
 <body>
 
   <header>
-    <h1>Morning Bell Coffee Roasters</h1>
+    <div class="brand">Morning Bell Coffee Roasters</div>
 
     <nav>
       <a href="index.html">Home</a>
-      <a href="ads.html">Ad Campaign</a>
+      <a href="ads.html" aria-current="page">Our Ads</a>
       <a href="landing.html">Shop Coffee</a>
     </nav>
   </header>
 
-  <!-- Leaderboard banner at the top -->
+  <!-- Leaderboard banner stays at the top -->
   <div class="top-banner">
     <a href="landing.html" aria-label="Visit Morning Bell Coffee Roasters">
       <img
@@ -427,19 +524,22 @@
   </div>
 
   <section class="hero">
-    <h2>Fresh Coffee. Better Mornings.</h2>
+    <p class="eyebrow">A taste of something local</p>
+    <h1>Fresh Coffee.<br>Better Mornings.</h1>
     <p>
       Discover Morning Bell Coffee Roasters, a specialty coffee roaster
       in downtown Ames, Iowa.
     </p>
+    <div class="hero-rule"></div>
   </section>
 
   <main>
 
-    <!-- Campaign overview with wide skyscraper beside it -->
+    <!-- Campaign overview and wide skyscraper -->
     <section class="campaign-layout">
 
       <div class="campaign-copy">
+        <p class="section-kicker">01 / The campaign</p>
         <h2>Campaign Overview</h2>
 
         <p>
@@ -479,10 +579,11 @@
 
     </section>
 
-    <!-- Medium rectangle stays in its original section -->
+    <!-- Reaching Coffee Lovers and medium rectangle -->
     <section class="content-with-ad">
 
       <div class="content-copy">
+        <p class="section-kicker">02 / Find your favorite</p>
         <h2>Reaching Coffee Lovers</h2>
 
         <p>
@@ -497,7 +598,7 @@
           how to order.
         </p>
 
-        <a class="cta-button" href="landing.html">Explore Our Coffee</a>
+        <a class="cta-button" href="landing.html">Explore Our Coffee &rarr;</a>
       </div>
 
       <div class="medium-ad-area">
@@ -511,19 +612,31 @@
 
     </section>
 
-    <!-- Half-page ad centered above financial estimates -->
-    <div class="half-page-ad">
-      <a href="landing.html" aria-label="Visit Morning Bell Coffee Roasters">
-        <img
-          src="fRESH.png"
-          alt="Morning Bell Coffee half-page advertisement"
-        >
-      </a>
-    </div>
+    <!-- Half-page ad before financial estimates -->
+    <section class="half-page-section">
+      <p class="section-kicker">A closer look at the brand</p>
+
+      <div class="half-page-ad">
+        <a href="landing.html" aria-label="Visit Morning Bell Coffee Roasters">
+          <img
+            src="fRESH.png"
+            alt="Morning Bell Coffee half-page advertisement"
+          >
+        </a>
+      </div>
+    </section>
 
     <!-- Financial estimates -->
     <section class="financial-estimates">
-      <h2>Financial Estimates</h2>
+
+      <div class="financial-heading">
+        <p class="section-kicker">03 / Campaign planning</p>
+        <h2>Financial Estimates</h2>
+        <p>
+          A projected look at the potential reach and cost of a one-month
+          advertising campaign.
+        </p>
+      </div>
 
       <div class="table-wrapper">
         <table>
@@ -575,12 +688,13 @@
     </section>
 
     <section class="closing">
+      <p class="section-kicker">Your next great cup</p>
       <h2>Start Your Morning with Morning Bell</h2>
       <p>
         Explore the coffee, discover the brand, and find your next favorite
         cup.
       </p>
-      <a class="cta-button" href="landing.html">Shop Coffee</a>
+      <a class="cta-button" href="landing.html">Shop Coffee &rarr;</a>
     </section>
 
   </main>
