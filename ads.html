@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Ads | Morning Bell Coffee Roasters</title>
+  <title>Morning Bell Coffee Roasters | Ad Campaign</title>
 
   <style>
     * {
@@ -14,52 +14,48 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f8f1e7;
-      color: #482514;
+      background-color: #f8f2e9;
+      color: #3d2b1f;
       line-height: 1.6;
     }
 
     header {
-      background: #fffaf3;
-      padding: 20px 7%;
+      background-color: #4b3025;
+      color: #fff8ef;
+      padding: 18px 7%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
       flex-wrap: wrap;
-      border-bottom: 1px solid #e8d7c1;
     }
 
-    .logo {
-      font-size: 22px;
-      font-weight: bold;
-      letter-spacing: 1px;
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
     }
 
     nav {
       display: flex;
+      gap: 22px;
       flex-wrap: wrap;
-      gap: 20px;
     }
 
     nav a {
-      color: #482514;
+      color: #fff8ef;
       text-decoration: none;
-      font-size: 13px;
       font-weight: bold;
-      letter-spacing: 1px;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #e9c9a5;
     }
 
-    /* Full-width leaderboard banner */
     .top-banner {
       width: 100%;
-      background: #e8d7c1;
-      padding: 0;
       margin: 0;
+      padding: 0;
+      background-color: #e8d7c1;
     }
 
     .top-banner a {
@@ -76,156 +72,80 @@
 
     .hero {
       text-align: center;
-      padding: 65px 20px;
-      background: #fffaf3;
+      padding: 55px 7% 45px;
+      background-color: #ead8c2;
     }
 
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(38px, 6vw, 64px);
-      line-height: 1.1;
-      margin: 15px 0;
+    .hero h2 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
     }
 
     .hero p {
-      max-width: 650px;
-      margin: 0 auto 25px;
-      font-size: 17px;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
     }
 
-    .button {
-      display: inline-block;
-      background: #482514;
-      color: #fffaf3;
-      padding: 13px 25px;
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      border-radius: 3px;
-    }
-
-    .button:hover {
-      background: #69412b;
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 35px 5%;
     }
 
     section {
-      padding: 60px 7%;
-    }
-
-    .section-heading {
-      text-align: center;
-      margin-bottom: 35px;
+      margin-bottom: 45px;
     }
 
     h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(28px, 4vw, 40px);
-      margin: 5px 0 12px;
+      color: #573927;
+      line-height: 1.25;
     }
 
-    h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 23px;
-      margin: 0 0 10px;
-    }
-
-    .section-heading p {
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .campaign-card {
-      max-width: 950px;
-      margin: 0 auto;
-      padding: 35px;
-      background: #fffaf3;
-      border: 1px solid #e8d7c1;
-      border-radius: 5px;
-    }
-
-    .campaign-detail {
-      margin-bottom: 25px;
-    }
-
-    .campaign-detail:last-child {
-      margin-bottom: 0;
-    }
-
-    .campaign-detail h3 {
-      font-size: 21px;
-    }
-
-    .hook {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
-      font-weight: bold;
-      margin: 8px 0;
-    }
-
-    /* Ad showcase: images only, without cards or labels */
-    .ads-section {
-      background: #fffaf3;
-    }
-
-    .ad-gallery {
-      max-width: 1250px;
-      margin: 0 auto;
-    }
-
-    .ad-link {
-      display: block;
-      margin: 0;
-      padding: 0;
-      border: none;
-      background: transparent;
-      line-height: 0;
-      transition: opacity 0.2s;
-    }
-
-    .ad-link:hover {
-      opacity: 0.88;
-    }
-
-    .ad-link img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    /* Large banner: fills the available page width */
-    .top-banner img {
-      width: 100%;
-      height: auto;
-    }
-
-    /* Main content and Medium Rectangle */
-    .content-with-ad {
+    .campaign-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 300px;
-      gap: 55px;
+      grid-template-columns: minmax(0, 1fr) 160px;
+      gap: 40px;
       align-items: start;
-      max-width: 1100px;
-      margin: 0 auto;
     }
 
-    .content-copy {
-      padding: 10px 0;
+    .campaign-copy {
+      min-width: 0;
     }
 
-    .content-copy h2 {
+    .campaign-copy h2 {
       margin-top: 0;
     }
 
-    .content-copy p {
-      margin-bottom: 18px;
+    .skyscraper-ad {
+      width: 160px;
+      max-width: 100%;
+      justify-self: center;
+    }
+
+    .skyscraper-ad a,
+    .medium-ad-area a,
+    .half-page-ad a {
+      display: block;
+      line-height: 0;
+    }
+
+    .skyscraper-ad img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .content-with-ad {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .content-copy {
+      min-width: 0;
     }
 
     .medium-ad-area {
@@ -235,151 +155,127 @@
     }
 
     .medium-ad-area img {
+      display: block;
       width: 100%;
       height: auto;
     }
 
-    /* Keep the two tall formats separate and proportional */
-    .vertical-ads {
-      display: grid;
-      grid-template-columns: 160px 300px;
-      justify-content: center;
-      align-items: start;
-      column-gap: 100px;
-      row-gap: 60px;
-      margin: 85px auto 0;
+    .cta-button {
+      display: inline-block;
+      background-color: #6a4430;
+      color: #fff8ef;
+      padding: 12px 22px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
     }
 
-    .vertical-ad {
-      width: 100%;
+    .cta-button:hover {
+      background-color: #4b3025;
+    }
+
+    .half-page-ad {
+      width: 300px;
+      max-width: 100%;
+      margin: 45px auto;
       text-align: center;
     }
 
-    .vertical-ad .ad-link {
-      width: 100%;
-    }
-
-    .vertical-ad img {
+    .half-page-ad img {
+      display: block;
       width: 100%;
       height: auto;
-    }
-
-    /* Financial estimates */
-    .benchmark-wrap {
-      max-width: 950px;
       margin: 0 auto;
-      overflow-x: auto;
-      background: #fffaf3;
-      border: 1px solid #e8d7c1;
     }
 
-    .benchmark {
-      border-collapse: collapse;
-      width: 100%;
-      min-width: 540px;
+    .financial-estimates {
+      margin-top: 0;
     }
 
-    .benchmark th,
-    .benchmark td {
-      text-align: left;
-      padding: 15px;
-      border: 1px solid #e8d7c1;
-    }
-
-    .benchmark th {
-      background: #e8d7c1;
-    }
-
-    .note {
-      max-width: 950px;
-      margin: 15px auto 0;
-      font-size: 13px;
-      color: #765b48;
-    }
-
-    .cta {
+    .financial-estimates h2 {
       text-align: center;
-      background: #e8d7c1;
+      margin-bottom: 20px;
     }
 
-    .cta p {
-      max-width: 600px;
-      margin: 0 auto 25px;
+    .table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fffaf4;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border: 1px solid #d8c3ad;
+      text-align: left;
+    }
+
+    th {
+      background-color: #6a4430;
+      color: #fff8ef;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f0e4d6;
+    }
+
+    .estimate-note {
+      font-size: 0.9rem;
+      color: #70594a;
+      margin-top: 12px;
+    }
+
+    .closing {
+      text-align: center;
+      padding: 30px 5%;
+      background-color: #ead8c2;
+    }
+
+    .closing h2 {
+      margin-top: 0;
     }
 
     footer {
-      padding: 25px 7%;
-      background: #482514;
-      color: #fffaf3;
+      background-color: #4b3025;
+      color: #fff8ef;
       text-align: center;
-      font-size: 13px;
+      padding: 20px;
+      font-size: 0.9rem;
     }
 
-    @media (max-width: 800px) {
-      .content-with-ad {
-        grid-template-columns: minmax(0, 1fr) 250px;
-        gap: 25px;
-      }
-
-      .medium-ad-area {
-        width: 250px;
-      }
-
-      .vertical-ads {
-        column-gap: 50px;
-      }
-    }
-
-    @media (max-width: 600px) {
+    @media (max-width: 750px) {
       header {
-        justify-content: center;
+        flex-direction: column;
         text-align: center;
       }
 
       nav {
         justify-content: center;
-        gap: 12px;
       }
 
-      section {
-        padding: 45px 6%;
+      .campaign-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .skyscraper-ad {
+        margin: 0 auto;
       }
 
       .content-with-ad {
         grid-template-columns: 1fr;
-        gap: 30px;
       }
 
       .medium-ad-area {
-        width: 300px;
-        max-width: 100%;
+        margin: 10px auto 0;
       }
 
-      .vertical-ads {
-        grid-template-columns: minmax(0, 300px);
-        gap: 45px;
-        margin-top: 50px;
-      }
-
-      .vertical-ad:first-child {
-        width: 160px;
-        justify-self: center;
-      }
-
-      .vertical-ad:last-child {
-        width: 300px;
-        max-width: 100%;
-        justify-self: center;
-      }
-
-      .campaign-card {
-        padding: 23px;
-      }
-
-      .benchmark th,
-      .benchmark td {
-        padding: 10px;
-        font-size: 13px;
+      .half-page-ad {
+        margin: 35px auto;
       }
     }
   </style>
@@ -388,289 +284,186 @@
 <body>
 
   <header>
-    <div class="logo">MORNING BELL</div>
+    <h1>Morning Bell Coffee Roasters</h1>
 
     <nav>
-      <a href="index.html">HOME</a>
-      <a href="ads.html">OUR ADS</a>
-      <a href="landing.html">DISCOVER OUR COFFEE</a>
+      <a href="index.html">Home</a>
+      <a href="ads.html">Ad Campaign</a>
+      <a href="landing.html">Shop Coffee</a>
     </nav>
   </header>
 
-  <!-- Leaderboard: full-width banner at the top -->
+  <!-- Leaderboard banner at the top -->
   <div class="top-banner">
     <a href="landing.html" aria-label="Visit Morning Bell Coffee Roasters">
-      <img src="FRESH%20ROASTE.png"
-           alt="Morning Bell Coffee Roasters banner advertisement">
+      <img
+        src="FRESH%20ROASTE.png"
+        alt="Morning Bell Coffee Roasters banner advertisement"
+      >
     </a>
   </div>
 
   <section class="hero">
-    <p class="eyebrow">The Morning Bell Campaign</p>
-    <h1>Meet Your New Morning.</h1>
+    <h2>Fresh Coffee. Better Mornings.</h2>
     <p>
-      Fresh roasted. Made for your morning. Explore our digital
-      advertising campaign designed to introduce people to Morning
-      Bell Coffee Roasters and encourage them to discover the brand.
+      Discover Morning Bell Coffee Roasters, a specialty coffee roaster
+      in downtown Ames, Iowa.
     </p>
-    <a class="button" href="landing.html">DISCOVER OUR COFFEE</a>
   </section>
 
-  <section id="campaign">
-    <div class="section-heading">
-      <p class="eyebrow">Behind the Campaign</p>
-      <h2>Campaign Overview</h2>
-      <p>
-        Learn about the goal, message, audience, and strategy behind
-        the Morning Bell Coffee Roasters campaign.
-      </p>
+  <main>
+
+    <!-- Campaign overview with wide skyscraper beside it -->
+    <section class="campaign-layout">
+
+      <div class="campaign-copy">
+        <h2>Campaign Overview</h2>
+
+        <p>
+          This digital advertising campaign is designed to increase
+          awareness of Morning Bell Coffee Roasters and encourage more
+          people to explore its coffee offerings.
+        </p>
+
+        <p>
+          The campaign focuses on reaching college students and young
+          adults in the Ames area, including people who enjoy coffee,
+          study at local cafes, and are interested in discovering local
+          businesses.
+        </p>
+
+        <p>
+          The ads use coffee-focused visuals and clear messaging to
+          introduce the brand, highlight its products, and encourage
+          visitors to learn more or shop online.
+        </p>
+
+        <p>
+          Multiple ad formats are used to reach visitors in different
+          places on the page while keeping the creative consistent with
+          Morning Bell's warm, welcoming brand.
+        </p>
+      </div>
+
+      <div class="skyscraper-ad">
+        <a href="landing.html" aria-label="Visit Morning Bell Coffee Roasters">
+          <img
+            src="Fresh%20Roasted.png"
+            alt="Morning Bell Coffee wide skyscraper advertisement"
+          >
+        </a>
+      </div>
+
+    </section>
+
+    <!-- Medium rectangle stays in its own section -->
+    <section class="content-with-ad">
+
+      <div class="content-copy">
+        <h2>Reaching Coffee Lovers</h2>
+
+        <p>
+          The campaign encourages potential customers to discover
+          locally roasted coffee and learn more about what Morning Bell
+          has to offer.
+        </p>
+
+        <p>
+          The goal is to turn ad views into meaningful visits to the
+          website, where customers can explore products and find out
+          how to order.
+        </p>
+
+        <a class="cta-button" href="landing.html">Explore Our Coffee</a>
+      </div>
+
+      <div class="medium-ad-area">
+        <a href="landing.html" aria-label="Visit Morning Bell Coffee Roasters">
+          <img
+            src="Premium%20coffee.png"
+            alt="Morning Bell Coffee medium rectangle advertisement"
+          >
+        </a>
+      </div>
+
+    </section>
+
+    <!-- Half-page ad centered above financial estimates -->
+    <div class="half-page-ad">
+      <a href="landing.html" aria-label="Visit Morning Bell Coffee Roasters">
+        <img
+          src="fRESH.png"
+          alt="Morning Bell Coffee half-page advertisement"
+        >
+      </a>
     </div>
 
-    <div class="campaign-card">
-
-      <div class="campaign-detail">
-        <h3>Campaign Goal</h3>
-        <p>
-          The primary goal is to increase brand awareness for Morning
-          Bell Coffee Roasters. The display ads introduce the brand to
-          potential customers, build recognition, and encourage people
-          to visit the landing page to learn more about the coffee.
-        </p>
-      </div>
-
-      <div class="campaign-detail">
-        <h3>Target Audience</h3>
-        <p>
-          Morning Bell Coffee Roasters primarily targets college students
-          ages 18–24 in Ames, Iowa, especially Iowa State University
-          students who enjoy coffee, need convenient places to study or
-          socialize, and are looking for quality coffee at an affordable
-          price. The secondary audience includes young professionals
-          and local residents who value freshly roasted coffee, a welcoming
-          café atmosphere, and community events. The campaign uses
-          engaging digital ads, appealing visuals, and a memorable message
-          to encourage these audiences to discover the brand.
-        </p>
-      </div>
-
-      <div class="campaign-detail">
-        <h3>Campaign Hook</h3>
-        <p class="hook">“Fresh Roasted. Made for Your Morning.”</p>
-        <p>
-          This message connects Morning Bell Coffee Roasters with the
-          everyday coffee routine. It introduces the brand in a simple,
-          memorable way and encourages people to explore what it offers.
-        </p>
-      </div>
-
-      <div class="campaign-detail">
-        <h3>Call to Action</h3>
-        <p>
-          <strong>Discover Our Coffee</strong> encourages viewers to
-          click an ad and visit the landing page to learn more about
-          Morning Bell Coffee Roasters.
-        </p>
-      </div>
-
-      <div class="campaign-detail">
-        <h3>Ad Placements</h3>
-        <p>
-          The campaign includes four digital display formats:
-          Medium Rectangle (300 × 250 px), Leaderboard (728 × 90 px),
-          Wide Skyscraper (160 × 600 px), and Half Page (300 × 600 px).
-          The leaderboard stretches across the top of the page. The
-          Medium Rectangle appears beside content, while the vertical
-          ads are displayed separately below. Each ad links to the
-          same landing page.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="ads-section" id="ads">
-    <div class="section-heading">
-      <p class="eyebrow">Explore the Creative</p>
-      <h2>Our Display Ads</h2>
-      <p>
-        Each ad is designed for a different digital placement while
-        keeping the same Morning Bell campaign message.
-      </p>
-    </div>
-
-    <div class="ad-gallery">
-
-      <!-- Medium Rectangle: image only, no label or size underneath -->
-      <div class="content-with-ad">
-
-        <div class="content-copy">
-          <p class="eyebrow">A Better Start to Your Day</p>
-          <h2>Fresh Coffee for Your Daily Routine.</h2>
-          <p>
-            Morning Bell Coffee Roasters brings a fresh perspective
-            to your everyday coffee routine. Our campaign introduces
-            the brand through warm visuals and a memorable message
-            designed to connect with coffee drinkers.
-          </p>
-          <p>
-            The campaign uses a variety of display ad formats to
-            introduce the brand in different website placements and
-            encourage potential customers to explore the coffee.
-          </p>
-          <a class="button" href="landing.html">DISCOVER OUR COFFEE</a>
-        </div>
-
-        <div class="medium-ad-area">
-          <a class="ad-link" href="landing.html"
-             aria-label="Visit Morning Bell Coffee Roasters">
-            <img src="Premium%20coffee.png"
-                 alt="Morning Bell Coffee medium rectangle advertisement">
-          </a>
-        </div>
-
-      </div>
-
-      <!-- Separate vertical ads, with no boxes, labels, or size text -->
-      <div class="vertical-ads">
-
-        <div class="vertical-ad">
-          <a class="ad-link" href="landing.html"
-             aria-label="Visit Morning Bell Coffee Roasters">
-            <img src="Fresh%20Roasted.png"
-                 alt="Morning Bell Coffee wide skyscraper advertisement">
-          </a>
-        </div>
-
-        <div class="vertical-ad">
-          <a class="ad-link" href="landing.html"
-             aria-label="Visit Morning Bell Coffee Roasters">
-            <img src="fRESH.png"
-                 alt="Morning Bell Coffee half page advertisement">
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section id="benchmarks">
-    <div class="section-heading">
-      <p class="eyebrow">Measuring the Campaign</p>
+    <!-- Financial estimates -->
+    <section class="financial-estimates">
       <h2>Financial Estimates</h2>
-      <p>
-        A proposed one-month budget and industry benchmarks help
-        estimate the potential reach and engagement of the campaign.
-      </p>
-    </div>
 
-    <div class="campaign-card">
-
-      <div class="campaign-detail">
-        <h3>Budget and Industry Benchmarks</h3>
-        <p>
-          Our campaign will use a proposed budget of $250 for one month
-          to increase brand awareness for Morning Bell Coffee Roasters.
-          Since coffee-specific display advertising benchmarks were not
-          available, broader restaurant and food industry benchmarks
-          are used for planning.
-        </p>
-      </div>
-
-      <div class="benchmark-wrap">
-        <table class="benchmark">
+      <div class="table-wrapper">
+        <table>
           <thead>
             <tr>
               <th>Metric</th>
-              <th>Industry Benchmark</th>
-              <th>Campaign Estimate</th>
+              <th>Estimated Result</th>
             </tr>
           </thead>
+
           <tbody>
             <tr>
-              <td>Average CPM</td>
-              <td>Approximately $5.02*</td>
-              <td>Approximately $5.02</td>
-            </tr>
-            <tr>
-              <td>Average CTR</td>
-              <td>0.12%</td>
-              <td>0.12%</td>
-            </tr>
-            <tr>
-              <td>Average CPC</td>
-              <td>$4.18</td>
-              <td>$4.18</td>
-            </tr>
-            <tr>
-              <td>Conversion rate (CVR)</td>
-              <td>Not reported</td>
-              <td>Not estimated</td>
-            </tr>
-            <tr>
-              <td>Campaign budget</td>
-              <td>—</td>
+              <td>Advertising Budget</td>
               <td>$250 for one month</td>
             </tr>
             <tr>
-              <td>Expected impressions</td>
-              <td>—</td>
+              <td>Estimated Impressions</td>
               <td>Approximately 49,800</td>
             </tr>
             <tr>
-              <td>Expected clicks</td>
-              <td>—</td>
+              <td>Estimated Click-Through Rate (CTR)</td>
+              <td>0.12%</td>
+            </tr>
+            <tr>
+              <td>Estimated Clicks</td>
               <td>Approximately 60</td>
+            </tr>
+            <tr>
+              <td>Estimated Cost Per Click (CPC)</td>
+              <td>$4.18</td>
+            </tr>
+            <tr>
+              <td>Estimated Cost Per Thousand Impressions (CPM)</td>
+              <td>Approximately $5.02</td>
+            </tr>
+            <tr>
+              <td>Conversion Rate</td>
+              <td>Not estimated</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <p class="note">
-        *The CPM is calculated using the industry's CTR and CPC,
-        rather than being directly reported by the source. These are
-        planning estimates based on broader restaurant and food
-        industry benchmarks, not actual Morning Bell campaign results.
+      <p class="estimate-note">
+        These figures are planning estimates based on general advertising
+        benchmarks, not actual campaign results. Actual performance may
+        vary depending on audience, placement, and campaign timing.
       </p>
+    </section>
 
-      <div class="campaign-detail" style="margin-top: 35px;">
-        <h3>Expected Campaign Outcomes</h3>
-        <p>
-          With a $250 budget, Morning Bell could generate approximately
-          49,800 ad impressions and 60 clicks. Because the primary goal
-          is brand awareness, the main focus will be increasing the
-          number of people who see and recognize the brand. Clicks and
-          website visits will be secondary measures of engagement.
-        </p>
-      </div>
+    <section class="closing">
+      <h2>Start Your Morning with Morning Bell</h2>
+      <p>
+        Explore the coffee, discover the brand, and find your next favorite
+        cup.
+      </p>
+      <a class="cta-button" href="landing.html">Shop Coffee</a>
+    </section>
 
-      <div class="campaign-detail">
-        <h3>How Success Will Be Measured</h3>
-        <p>
-          Campaign performance can be evaluated by tracking impressions,
-          click-through rate, cost per click, and landing-page visits.
-          These metrics can help determine whether the ads are reaching
-          college students and building awareness of Morning Bell Coffee
-          Roasters. Conversion rate is not estimated because a conversion
-          benchmark was not available for this campaign.
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="cta">
-    <p class="eyebrow">Your Next Morning Ritual</p>
-    <h2>Good Coffee. Fresh Perspective.</h2>
-    <p>
-      Ready to discover Morning Bell Coffee Roasters? Visit our landing
-      page to learn more about the brand.
-    </p>
-    <a class="button" href="landing.html">DISCOVER OUR COFFEE</a>
-  </section>
+  </main>
 
   <footer>
-    <p>Morning Bell Coffee Roasters</p>
-    <p>Fresh Roasted. Made for Your Morning.</p>
+    <p>&copy; 2026 Morning Bell Coffee Roasters. All rights reserved.</p>
   </footer>
 
 </body>
