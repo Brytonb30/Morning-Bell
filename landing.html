@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -141,10 +142,25 @@
     .bean {
       position: absolute;
       top: -50px;
-      color: #8b5636;
-      font-size: 22px;
-      opacity: 0.55;
+      width: 13px;
+      height: 21px;
+      background: #8b5636;
+      border-radius: 55% 45% 55% 45%;
+      opacity: 0.65;
+      transform: rotate(35deg);
       animation: bean-fall linear infinite;
+    }
+
+    .bean::after {
+      content: "";
+      position: absolute;
+      width: 3px;
+      height: 15px;
+      background: #d2a17d;
+      border-radius: 50%;
+      top: 3px;
+      left: 5px;
+      transform: rotate(15deg);
     }
 
     @keyframes bean-fall {
@@ -154,11 +170,11 @@
       }
 
       10% {
-        opacity: 0.55;
+        opacity: 0.65;
       }
 
       90% {
-        opacity: 0.55;
+        opacity: 0.65;
       }
 
       100% {
@@ -402,12 +418,14 @@
       const bean = document.createElement("div");
 
       bean.classList.add("bean");
-      bean.innerHTML = "☕";
 
       bean.style.left = Math.random() * 100 + "%";
       bean.style.animationDuration = (8 + Math.random() * 7) + "s";
       bean.style.animationDelay = (Math.random() * 10) + "s";
-      bean.style.fontSize = (15 + Math.random() * 12) + "px";
+
+      const size = 10 + Math.random() * 8;
+      bean.style.width = size + "px";
+      bean.style.height = (size * 1.6) + "px";
 
       coffeeBeans.appendChild(bean);
     }
