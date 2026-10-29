@@ -1,71 +1,77 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freshly Roasted | Morning Bell Coffee Roasters</title>
+  <title>Morning Bell Coffee Roasters</title>
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f8f1e7;
+      background-color: #f8f1e7;
       color: #482514;
+      line-height: 1.6;
     }
 
+    /* HEADER */
     header {
+      background-color: #fffaf3;
+      padding: 22px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 22px 7%;
-      background: #fffaf3;
-      gap: 20px;
-      flex-wrap: wrap;
       position: relative;
       z-index: 10;
     }
 
     .logo {
-      font-size: 22px;
-      font-weight: 900;
-      letter-spacing: -1px;
+      font-size: 23px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #482514;
     }
 
     nav {
       display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
+      gap: 30px;
     }
 
     nav a {
       text-decoration: none;
       color: #482514;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: bold;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
     }
 
     nav a:hover {
-      color: #a66b45;
+      color: #a66b42;
     }
 
+    /* HERO SECTION */
     .hero {
+      min-height: 620px;
+      padding: 80px 8%;
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 45px;
-      padding: 65px 8%;
-      min-height: 570px;
+      gap: 55px;
       position: relative;
       overflow: hidden;
     }
 
-    .hero-copy {
+    .hero-text {
       position: relative;
       z-index: 2;
     }
@@ -74,67 +80,56 @@
       font-size: 12px;
       letter-spacing: 3px;
       font-weight: bold;
+      color: #a66b42;
       margin-bottom: 20px;
     }
 
-    h1 {
-      font-size: clamp(54px, 7vw, 100px);
-      line-height: 0.95;
-      letter-spacing: -5px;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-
-    h1 span {
-      display: block;
-    }
-
-    h1 .locally-loved {
-      color: #a66b45;
-    }
-
-    .description {
-      font-size: 16px;
-      line-height: 1.8;
-      max-width: 440px;
-      margin-bottom: 28px;
-    }
-
-    .button {
-      display: inline-block;
-      background: #482514;
-      color: #fffaf3;
-      padding: 16px 25px;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      border: 2px solid #482514;
-      transition: 0.2s;
-    }
-
-    .button:hover {
-      background: transparent;
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(48px, 6vw, 76px);
+      line-height: 1.05;
       color: #482514;
+      margin-bottom: 25px;
     }
 
-    .product-image {
-      width: 100%;
-      min-height: 400px;
-      height: 100%;
-      max-height: 500px;
-      object-fit: cover;
-      border-radius: 3px;
+    .hero p {
+      font-size: 16px;
+      max-width: 470px;
+      color: #765744;
+      margin-bottom: 32px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      background-color: #482514;
+      color: #fffaf3;
+      text-decoration: none;
+      padding: 14px 27px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero-button:hover {
+      background-color: #a66b42;
+    }
+
+    /* VIDEO */
+    .hero-media {
       position: relative;
       z-index: 1;
     }
 
-    video.product-image {
+    .product-image {
+      width: 100%;
+      height: 470px;
+      object-fit: cover;
       display: block;
-      background: #e5d4c1;
+      border-radius: 4px;
     }
 
-    /* Falling coffee beans */
+    /* FALLING COFFEE BEANS */
     .coffee-beans {
       position: absolute;
       inset: 0;
@@ -143,151 +138,176 @@
       z-index: 3;
     }
 
-    .coffee-bean {
+    .bean {
       position: absolute;
-      top: -45px;
-      width: 17px;
-      height: 25px;
-      background: #704126;
-      border-radius: 50%;
-      opacity: 0;
-      transform: rotate(35deg);
+      top: -50px;
+      color: #8b5636;
+      font-size: 22px;
+      opacity: 0.55;
       animation: bean-fall linear infinite;
-    }
-
-    .coffee-bean::after {
-      content: "";
-      position: absolute;
-      left: 7px;
-      top: 3px;
-      width: 3px;
-      height: 19px;
-      border-left: 2px solid #c69a70;
-      border-radius: 50%;
-      transform: rotate(8deg);
-    }
-
-    .coffee-bean:nth-child(3n) {
-      background: #3f2519;
-      width: 13px;
-      height: 20px;
-    }
-
-    .coffee-bean:nth-child(4n) {
-      background: #956344;
-      width: 19px;
-      height: 27px;
     }
 
     @keyframes bean-fall {
       0% {
-        transform: translateY(-30px) rotate(0deg);
+        transform: translateY(-50px) rotate(0deg);
         opacity: 0;
       }
 
       10% {
-        opacity: 0.85;
+        opacity: 0.55;
       }
 
-      85% {
-        opacity: 0.75;
+      90% {
+        opacity: 0.55;
       }
 
       100% {
-        transform: translateY(650px) rotate(300deg);
+        transform: translateY(700px) rotate(360deg);
         opacity: 0;
       }
     }
 
-    .message {
-      background: #482514;
-      color: #fffaf3;
+    /* ABOUT SECTION */
+    .about {
+      background-color: #fffaf3;
+      padding: 100px 10%;
       text-align: center;
-      padding: 75px 8%;
-      scroll-margin-top: 20px;
     }
 
-    .message h2 {
-      font-size: clamp(30px, 5vw, 52px);
-      line-height: 1.15;
-      margin-bottom: 24px;
+    .section-label {
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: bold;
+      color: #a66b42;
+      margin-bottom: 15px;
     }
 
-    .message .message-copy {
-      max-width: 680px;
+    .about h2,
+    .details h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(35px, 4vw, 48px);
+      color: #482514;
+      margin-bottom: 22px;
+    }
+
+    .about p {
+      max-width: 760px;
       margin: 0 auto;
+      color: #765744;
       font-size: 16px;
       line-height: 1.9;
     }
 
+    /* DETAILS SECTION */
     .details {
-      padding: 65px 8%;
+      padding: 100px 8%;
       text-align: center;
-    }
-
-    .details h2 {
-      font-size: clamp(28px, 4vw, 34px);
-      margin-bottom: 18px;
+      background-color: #f1e4d3;
     }
 
     .details p {
-      max-width: 600px;
-      margin: 0 auto 25px;
-      line-height: 1.8;
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #765744;
+      font-size: 16px;
     }
 
+    .details-button {
+      display: inline-block;
+      background-color: #482514;
+      color: #fffaf3;
+      text-decoration: none;
+      padding: 14px 28px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .details-button:hover {
+      background-color: #a66b42;
+    }
+
+    /* FOOTER */
     footer {
-      padding: 25px;
+      background-color: #482514;
+      color: #fffaf3;
       text-align: center;
-      background: #fffaf3;
-      font-size: 13px;
+      padding: 28px 15px;
+      font-size: 12px;
+      letter-spacing: 2px;
     }
 
-    @media (max-width: 700px) {
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 800px) {
       header {
-        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
       }
 
       nav {
+        gap: 18px;
+        flex-wrap: wrap;
         justify-content: center;
       }
 
       .hero {
         grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 45px 7%;
+        padding: 65px 7%;
+        gap: 35px;
       }
 
-      h1 {
-        letter-spacing: -3px;
-        font-size: clamp(46px, 12vw, 72px);
+      .hero h1 {
+        font-size: 54px;
       }
 
       .product-image {
-        min-height: 300px;
-        max-height: 420px;
+        height: 350px;
       }
 
-      .message {
-        padding: 55px 7%;
+      .about,
+      .details {
+        padding: 75px 7%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        font-size: 20px;
       }
 
-      .coffee-bean {
-        width: 13px;
-        height: 19px;
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 11px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .product-image {
+        height: 280px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .coffee-bean {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .bean {
         animation: none;
-        display: none;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- HEADER -->
   <header>
     <div class="logo">MORNING BELL ☕</div>
 
@@ -298,32 +318,31 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
+  <!-- HERO SECTION -->
+  <section class="hero">
 
-      <div class="coffee-beans" id="coffeeBeans" aria-hidden="true"></div>
+    <div class="coffee-beans" id="coffeeBeans"></div>
 
-      <div class="hero-copy">
-        <p class="eyebrow">YOUR NEW COFFEE OBSESSION</p>
+    <div class="hero-text">
+      <div class="eyebrow">YOUR NEW COFFEE OBSESSION</div>
 
-        <h1>
-          <span>Freshly</span>
-          <span>Roasted.</span>
-          <span class="locally-loved">Locally</span>
-          <span class="locally-loved">Loved.</span>
-        </h1>
+      <h1>
+        Freshly<br>
+        Roasted.<br>
+        Locally<br>
+        Loved.
+      </h1>
 
-        <p class="description">
-          Discover freshly roasted coffee, handcrafted drinks,
-          house-made syrups, and locally sourced teas and treats.
-          Visit Morning Bell Coffee Roasters in downtown Ames
-          for your new favorite cup. Stop in and sip local!
-        </p>
+      <p>
+        Discover freshly roasted coffee, handcrafted drinks, house-made syrups,
+        and locally sourced teas and treats. Visit Morning Bell Coffee Roasters
+        in downtown Ames for your new favorite cup. Stop in and sip local!
+      </p>
 
-        <a class="button" href="#about">ABOUT MORNING BELL</a>
-      </div>
+      <a href="#about" class="hero-button">ABOUT MORNING BELL</a>
+    </div>
 
-      <!-- Video file uploaded beside index.html in GitHub -->
+    <div class="hero-media">
       <video
         class="product-image"
         autoplay
@@ -331,62 +350,68 @@
         loop
         playsinline
         controls
-        poster="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1000&q=85"
       >
         <source src="morning-bell-video.mp4" type="video/mp4">
         Your browser does not support the video.
       </video>
+    </div>
 
-    </section>
+  </section>
 
-    <section class="message" id="about">
-      <p class="eyebrow">MEET YOUR NEW FAVORITE</p>
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="section-label">MORE THAN JUST COFFEE</div>
 
-      <h2>Good Coffee.<br>Fresh Perspective.</h2>
+    <h2>Good Coffee. Fresh Perspective.</h2>
 
-      <p class="message-copy">
-        Morning Bell Coffee Roasters is a worker-owned and
-        operated roastery and café. We source great-tasting
-        beans from around the world and roast them fresh.
-        Our welcoming café celebrates community, with
-        handcrafted drinks, house-made syrups, teas from
-        local supplier Little Woods Herbs &amp; Teas, and treats
-        from downtown favorites Potters Shoppe &amp; Eatery and
-        Piece and Freedom Bakery.
-      </p>
-    </section>
+    <p>
+      Morning Bell Coffee Roasters is a worker-owned café bringing people
+      together over thoughtfully sourced coffee and locally made favorites.
+      From freshly roasted beans and handcrafted drinks to Little Woods Herbs
+      &amp; Teas, Potters Shoppe &amp; Eatery, and Piece and Freedom Bakery,
+      Morning Bell celebrates community, creativity, and the little things
+      that make every morning special.
+    </p>
+  </section>
 
-    <section class="details">
-      <h2>Make It a Morning Bell Morning.</h2>
+  <!-- DETAILS SECTION -->
+  <section class="details">
+    <div class="section-label">YOUR NEXT FAVORITE SPOT</div>
 
-      <p>
-        From coffee lovers to everyday coffee drinkers,
-        we're here to make Morning Bell a name worth
-        remembering. Explore the brand and find your
-        next coffee moment.
-      </p>
+    <h2>Make It a Morning Bell Morning.</h2>
 
-      <a class="button" href="ads.html">EXPLORE OUR CAMPAIGN</a>
-    </section>
-  </main>
+    <p>
+      Whether you're stopping in for your morning coffee, catching up with
+      friends, or discovering something new, Morning Bell is here to make
+      your day a little brighter. Find your new favorite and sip local!
+    </p>
 
+    <a href="ads.html" class="details-button">EXPLORE OUR ADS</a>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    MORNING BELL COFFEE ROASTERS · FRESH ROASTED, EVERY DAY
+    MORNING BELL COFFEE ROASTERS · FRESH ROASTED, EVERY DAY.
   </footer>
 
+  <!-- COFFEE BEAN ANIMATION -->
   <script>
-    const beanContainer = document.getElementById("coffeeBeans");
+    const coffeeBeans = document.getElementById("coffeeBeans");
 
     for (let i = 0; i < 18; i++) {
-      const bean = document.createElement("span");
-      bean.className = "coffee-bean";
+      const bean = document.createElement("div");
 
-      bean.style.left = (3 + Math.random() * 92) + "%";
+      bean.classList.add("bean");
+      bean.innerHTML = "☕";
+
+      bean.style.left = Math.random() * 100 + "%";
       bean.style.animationDuration = (8 + Math.random() * 7) + "s";
-      bean.style.animationDelay = (-Math.random() * 15) + "s";
+      bean.style.animationDelay = (Math.random() * 10) + "s";
+      bean.style.fontSize = (15 + Math.random() * 12) + "px";
 
-      beanContainer.appendChild(bean);
+      coffeeBeans.appendChild(bean);
     }
   </script>
+
 </body>
 </html>
