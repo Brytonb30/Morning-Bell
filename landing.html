@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fresh Roasted | Morning Bell Coffee Roasters</title>
+  <title>Freshly Roasted | Morning Bell Coffee Roasters</title>
 
   <style>
     * {
@@ -52,7 +52,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
-      gap: 35px;
+      gap: 45px;
       padding: 65px 8%;
       min-height: 570px;
     }
@@ -66,7 +66,7 @@
 
     h1 {
       font-size: clamp(54px, 7vw, 100px);
-      line-height: .88;
+      line-height: .95;
       letter-spacing: -5px;
       text-transform: uppercase;
       margin-bottom: 28px;
@@ -79,7 +79,7 @@
     .description {
       font-size: 16px;
       line-height: 1.8;
-      max-width: 420px;
+      max-width: 440px;
       margin-bottom: 28px;
     }
 
@@ -105,6 +105,7 @@
       width: 100%;
       min-height: 400px;
       height: 100%;
+      max-height: 500px;
       object-fit: cover;
       border-radius: 3px;
     }
@@ -113,19 +114,21 @@
       background: #482514;
       color: #fffaf3;
       text-align: center;
-      padding: 65px 20px;
+      padding: 75px 8%;
     }
 
     .message h2 {
       font-size: clamp(30px, 5vw, 52px);
+      line-height: 1.15;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 24px;
     }
 
-    .message p {
-      max-width: 600px;
-      margin: auto;
-      line-height: 1.8;
+    .message .message-copy {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 16px;
+      line-height: 1.9;
     }
 
     .details {
@@ -134,12 +137,12 @@
     }
 
     .details h2 {
-      font-size: 34px;
-      margin-bottom: 15px;
+      font-size: clamp(28px, 4vw, 34px);
+      margin-bottom: 18px;
     }
 
     .details p {
-      max-width: 650px;
+      max-width: 600px;
       margin: 0 auto 25px;
       line-height: 1.8;
     }
@@ -156,8 +159,13 @@
         justify-content: center;
       }
 
+      nav {
+        justify-content: center;
+      }
+
       .hero {
         grid-template-columns: 1fr;
+        gap: 30px;
         padding: 45px 7%;
       }
 
@@ -168,6 +176,10 @@
       .product-image {
         min-height: 300px;
         max-height: 420px;
+      }
+
+      .message {
+        padding: 55px 7%;
       }
     }
   </style>
@@ -190,17 +202,19 @@
         <p class="eyebrow">YOUR NEW COFFEE OBSESSION</p>
 
         <h1>
-          <span>FRESH</span>
-          <span>ROASTED.</span>
+          <span>Freshly</span>
+          <span>Roasted.</span>
         </h1>
 
         <p class="description">
-          Meet Morning Bell Coffee Roasters. Discover a
-          coffee brand made for your everyday ritual, from
-          your first sip to your favorite iced coffee.
+          Freshly Roasted. Locally Loved.
+          Discover freshly roasted coffee, handcrafted drinks,
+          house-made syrups, and locally sourced teas and treats.
+          Visit Morning Bell Coffee Roasters in downtown Ames
+          for your new favorite cup. Stop in and sip local!
         </p>
 
-        <a class="button" href="#discover">ABOUT MORNING BELL</a>
+        <a class="button" href="#discover">DISCOVER OUR COFFEE</a>
       </div>
 
       <img
@@ -212,24 +226,31 @@
 
     <section class="message" id="discover">
       <p class="eyebrow">MEET YOUR NEW FAVORITE</p>
-      <h2>Good Coffee.<br>Fresh Perspective.</h2>
-      <p>
-        MORNING BELL COFFEE ROASTERS IS A WORK-OWNED AND RUN ROASTERY AND CAFE. WE FOCUS ON BRINGING IN THE BEST-TASTING BEANS FROM ALL
-        OVER THE WORLD AND ROASTING THEM UP FRESH. WE EMBRACE COMMUNITY IN OUR SMALL CAFE SPACE. OUR HANDMADE DRINKS USE FRESHLY ROASTED-IN-HOUSE 
-        COFFEE, HANDMADE SYRUP, AND TEAS FROM LOCAL SUPPLIER LITTLE WOODS HERBS & TEAS. WE ALSO FEATURE TREATS FROM LOCAL DOWNTOWN BUSINESSES:
-        POTTERS SHOPPE & EATERY AND PIECE AND FREEDOM BAKERY.
 
+      <h2>Good Coffee.<br>Fresh Perspective.</h2>
+
+      <p class="message-copy">
+        Morning Bell Coffee Roasters is a worker-owned and
+        operated roastery and café. We source great-tasting
+        beans from around the world and roast them fresh.
+        Our welcoming café celebrates community, with
+        handcrafted drinks, house-made syrups, teas from
+        local supplier Little Woods Herbs & Teas, and treats
+        from downtown favorites Potters Shoppe & Eatery and
+        Piece and Freedom Bakery.
       </p>
     </section>
 
     <section class="details">
       <h2>Make It a Morning Bell Morning.</h2>
+
       <p>
         From coffee lovers to everyday coffee drinkers,
         we're here to make Morning Bell a name worth
         remembering. Explore the brand and find your
         next coffee moment.
       </p>
+
       <a class="button" href="ads.html">EXPLORE OUR CAMPAIGN</a>
     </section>
   </main>
