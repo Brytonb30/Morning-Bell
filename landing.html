@@ -185,7 +185,7 @@
 
     /* ABOUT SECTION */
     .about {
-      background-color: #fffaf3;
+      background-color: #482514;
       padding: 100px 10%;
       text-align: center;
     }
@@ -198,18 +198,21 @@
       margin-bottom: 15px;
     }
 
-    .about h2,
-    .details h2 {
+    .about .section-label {
+      color: #d2a17d;
+    }
+
+    .about h2 {
       font-family: Georgia, serif;
       font-size: clamp(35px, 4vw, 48px);
-      color: #482514;
+      color: #d2a17d;
       margin-bottom: 22px;
     }
 
     .about p {
       max-width: 760px;
       margin: 0 auto;
-      color: #765744;
+      color: #d2a17d;
       font-size: 16px;
       line-height: 1.9;
     }
@@ -219,6 +222,13 @@
       padding: 100px 8%;
       text-align: center;
       background-color: #f1e4d3;
+    }
+
+    .details h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(35px, 4vw, 48px);
+      color: #482514;
+      margin-bottom: 22px;
     }
 
     .details p {
@@ -418,7 +428,6 @@
       const bean = document.createElement("div");
 
       bean.classList.add("bean");
-
       bean.style.left = Math.random() * 100 + "%";
       bean.style.animationDuration = (8 + Math.random() * 7) + "s";
       bean.style.animationDelay = (Math.random() * 10) + "s";
