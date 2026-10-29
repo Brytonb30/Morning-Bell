@@ -301,7 +301,6 @@
   <main>
     <section class="hero">
 
-      <!-- Animated coffee beans -->
       <div class="coffee-beans" id="coffeeBeans" aria-hidden="true"></div>
 
       <div class="hero-copy">
@@ -324,7 +323,7 @@
         <a class="button" href="#about">ABOUT MORNING BELL</a>
       </div>
 
-      <!-- Replace the placeholder with your GitHub MP4 raw URL -->
+      <!-- Video file uploaded beside index.html in GitHub -->
       <video
         class="product-image"
         autoplay
@@ -334,7 +333,7 @@
         controls
         poster="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1000&q=85"
       >
-        <source src="YOUR-GITHUB-MP4-RAW-URL-HERE" type="video/mp4">
+        <source src="morning-bell-video.mp4" type="video/mp4">
         Your browser does not support the video.
       </video>
 
@@ -378,7 +377,6 @@
   <script>
     const beanContainer = document.getElementById("coffeeBeans");
 
-    // Create decorative coffee beans with varied positions and speeds.
     for (let i = 0; i < 18; i++) {
       const bean = document.createElement("span");
       bean.className = "coffee-bean";
