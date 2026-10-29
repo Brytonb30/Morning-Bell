@@ -27,6 +27,8 @@
       background: #fffaf3;
       gap: 20px;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 10;
     }
 
     .logo {
@@ -48,6 +50,10 @@
       font-weight: bold;
     }
 
+    nav a:hover {
+      color: #a66b45;
+    }
+
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -55,6 +61,13 @@
       gap: 45px;
       padding: 65px 8%;
       min-height: 570px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
     }
 
     .eyebrow {
@@ -66,7 +79,7 @@
 
     h1 {
       font-size: clamp(54px, 7vw, 100px);
-      line-height: .95;
+      line-height: 0.95;
       letter-spacing: -5px;
       text-transform: uppercase;
       margin-bottom: 28px;
@@ -74,6 +87,10 @@
 
     h1 span {
       display: block;
+    }
+
+    h1 .locally-loved {
+      color: #a66b45;
     }
 
     .description {
@@ -93,7 +110,7 @@
       font-weight: bold;
       letter-spacing: 1px;
       border: 2px solid #482514;
-      transition: .2s;
+      transition: 0.2s;
     }
 
     .button:hover {
@@ -108,6 +125,78 @@
       max-height: 500px;
       object-fit: cover;
       border-radius: 3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    video.product-image {
+      display: block;
+      background: #e5d4c1;
+    }
+
+    /* Falling coffee beans */
+    .coffee-beans {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .coffee-bean {
+      position: absolute;
+      top: -45px;
+      width: 17px;
+      height: 25px;
+      background: #704126;
+      border-radius: 50%;
+      opacity: 0;
+      transform: rotate(35deg);
+      animation: bean-fall linear infinite;
+    }
+
+    .coffee-bean::after {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 3px;
+      width: 3px;
+      height: 19px;
+      border-left: 2px solid #c69a70;
+      border-radius: 50%;
+      transform: rotate(8deg);
+    }
+
+    .coffee-bean:nth-child(3n) {
+      background: #3f2519;
+      width: 13px;
+      height: 20px;
+    }
+
+    .coffee-bean:nth-child(4n) {
+      background: #956344;
+      width: 19px;
+      height: 27px;
+    }
+
+    @keyframes bean-fall {
+      0% {
+        transform: translateY(-30px) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.85;
+      }
+
+      85% {
+        opacity: 0.75;
+      }
+
+      100% {
+        transform: translateY(650px) rotate(300deg);
+        opacity: 0;
+      }
     }
 
     .message {
@@ -115,12 +204,12 @@
       color: #fffaf3;
       text-align: center;
       padding: 75px 8%;
+      scroll-margin-top: 20px;
     }
 
     .message h2 {
       font-size: clamp(30px, 5vw, 52px);
       line-height: 1.15;
-      text-transform: uppercase;
       margin-bottom: 24px;
     }
 
@@ -171,6 +260,7 @@
 
       h1 {
         letter-spacing: -3px;
+        font-size: clamp(46px, 12vw, 72px);
       }
 
       .product-image {
@@ -180,6 +270,18 @@
 
       .message {
         padding: 55px 7%;
+      }
+
+      .coffee-bean {
+        width: 13px;
+        height: 19px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .coffee-bean {
+        animation: none;
+        display: none;
       }
     }
   </style>
@@ -192,39 +294,53 @@
     <nav>
       <a href="index.html">HOME</a>
       <a href="ads.html">OUR ADS</a>
-      <a href="#discover">DISCOVER OUR COFFEE</a>
+      <a href="#about">ABOUT MORNING BELL</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <div>
+
+      <!-- Animated coffee beans -->
+      <div class="coffee-beans" id="coffeeBeans" aria-hidden="true"></div>
+
+      <div class="hero-copy">
         <p class="eyebrow">YOUR NEW COFFEE OBSESSION</p>
 
         <h1>
           <span>Freshly</span>
           <span>Roasted.</span>
+          <span class="locally-loved">Locally</span>
+          <span class="locally-loved">Loved.</span>
         </h1>
 
         <p class="description">
-          Freshly Roasted. Locally Loved.
           Discover freshly roasted coffee, handcrafted drinks,
           house-made syrups, and locally sourced teas and treats.
           Visit Morning Bell Coffee Roasters in downtown Ames
           for your new favorite cup. Stop in and sip local!
         </p>
 
-        <a class="button" href="#discover">DISCOVER OUR COFFEE</a>
+        <a class="button" href="#about">ABOUT MORNING BELL</a>
       </div>
 
-      <img
+      <!-- Replace the placeholder with your GitHub MP4 raw URL -->
+      <video
         class="product-image"
-        src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1000&q=85"
-        alt="Freshly prepared iced coffee"
+        autoplay
+        muted
+        loop
+        playsinline
+        controls
+        poster="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=1000&q=85"
       >
+        <source src="YOUR-GITHUB-MP4-RAW-URL-HERE" type="video/mp4">
+        Your browser does not support the video.
+      </video>
+
     </section>
 
-    <section class="message" id="discover">
+    <section class="message" id="about">
       <p class="eyebrow">MEET YOUR NEW FAVORITE</p>
 
       <h2>Good Coffee.<br>Fresh Perspective.</h2>
@@ -235,8 +351,8 @@
         beans from around the world and roast them fresh.
         Our welcoming café celebrates community, with
         handcrafted drinks, house-made syrups, teas from
-        local supplier Little Woods Herbs & Teas, and treats
-        from downtown favorites Potters Shoppe & Eatery and
+        local supplier Little Woods Herbs &amp; Teas, and treats
+        from downtown favorites Potters Shoppe &amp; Eatery and
         Piece and Freedom Bakery.
       </p>
     </section>
@@ -258,5 +374,21 @@
   <footer>
     MORNING BELL COFFEE ROASTERS · FRESH ROASTED, EVERY DAY
   </footer>
+
+  <script>
+    const beanContainer = document.getElementById("coffeeBeans");
+
+    // Create decorative coffee beans with varied positions and speeds.
+    for (let i = 0; i < 18; i++) {
+      const bean = document.createElement("span");
+      bean.className = "coffee-bean";
+
+      bean.style.left = (3 + Math.random() * 92) + "%";
+      bean.style.animationDuration = (8 + Math.random() * 7) + "s";
+      bean.style.animationDelay = (-Math.random() * 15) + "s";
+
+      beanContainer.appendChild(bean);
+    }
+  </script>
 </body>
 </html>
