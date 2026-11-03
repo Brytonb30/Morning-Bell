@@ -27,7 +27,7 @@
     /* HEADER */
     header {
       background-color: #fffaf3;
-      padding: 22px 8%;
+      padding: 12px 8%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -35,11 +35,17 @@
       z-index: 10;
     }
 
-    .logo {
-      font-size: 23px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      color: #482514;
+    .logo img {
+      width: 95px;
+      height: 95px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
     }
 
     nav {
@@ -298,8 +304,9 @@
     }
 
     @media (max-width: 480px) {
-      .logo {
-        font-size: 20px;
+      .logo img {
+        width: 85px;
+        height: 85px;
       }
 
       nav {
@@ -335,7 +342,11 @@
 
   <!-- HEADER -->
   <header>
-    <div class="logo">MORNING BELL ☕</div>
+    <div class="logo">
+      <a href="index.html">
+        <img src="81553fbe-f593-4e25-b75f-9fea658851b2.png" alt="Morning Bell Coffee Roasters">
+      </a>
+    </div>
 
     <nav>
       <a href="index.html">HOME</a>
