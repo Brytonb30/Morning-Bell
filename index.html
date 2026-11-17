@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Morning Bell | Home</title>
+
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -14,6 +16,7 @@
       color: #482514;
       line-height: 1.7;
     }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -23,24 +26,41 @@
       flex-wrap: wrap;
       gap: 18px;
     }
-    .logo { font-size: 23px; font-weight: 900; }
-    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
     nav a {
       text-decoration: none;
       color: #482514;
       font-size: 14px;
       font-weight: bold;
     }
+
+    nav a:hover {
+      color: #a27652;
+    }
+
     .hero {
       text-align: center;
       padding: 85px 8%;
       background: #e8d7c1;
     }
+
     .eyebrow {
       font-size: 12px;
       letter-spacing: 3px;
       font-weight: bold;
     }
+
     h1 {
       font-size: clamp(44px, 7vw, 82px);
       line-height: 1;
@@ -48,10 +68,12 @@
       margin: 20px 0;
       text-transform: uppercase;
     }
+
     .hero p {
       max-width: 650px;
       margin: 18px auto;
     }
+
     .button {
       display: inline-block;
       background: #482514;
@@ -61,52 +83,203 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 13px;
+      transition: .2s;
     }
-    main { max-width: 950px; margin: auto; padding: 45px 22px; }
+
+    .button:hover {
+      background: #70472f;
+    }
+
+    main {
+      max-width: 950px;
+      margin: auto;
+      padding: 45px 22px;
+    }
+
     .section {
       background: #fffaf3;
       padding: 30px;
       margin-bottom: 25px;
       border-radius: 8px;
     }
-    h2 { font-size: 28px; margin-top: 0; }
+
+    h2 {
+      font-size: 28px;
+      margin-top: 0;
+    }
+
     footer {
       background: #482514;
       color: #fffaf3;
       padding: 25px;
       text-align: center;
     }
+
+    footer a {
+      color: #e8d7c1;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* EMAIL PROMO POP-UP */
+
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(45, 29, 19, .60);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+
+    .popup {
+      background: #fffaf3;
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+      padding: 42px 32px;
+      border-radius: 15px;
+      position: relative;
+      box-shadow: 0 12px 40px rgba(0,0,0,.22);
+      border: 2px solid #e8d7c1;
+      animation: appear .35s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 12px;
+      right: 17px;
+      background: none;
+      border: none;
+      font-size: 26px;
+      color: #70513d;
+      cursor: pointer;
+    }
+
+    .popup-icon {
+      font-size: 43px;
+      margin-bottom: 10px;
+    }
+
+    .popup-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      font-weight: bold;
+      color: #9a7758;
+      text-transform: uppercase;
+    }
+
+    .popup h2 {
+      font-family: Georgia, serif;
+      font-size: 32px;
+      line-height: 1.2;
+      color: #482514;
+      margin: 14px 0;
+    }
+
+    .popup p {
+      font-size: 14px;
+      color: #766052;
+      margin-bottom: 20px;
+    }
+
+    .discount {
+      display: inline-block;
+      background: #e8d7c1;
+      color: #482514;
+      padding: 10px 22px;
+      font-size: 25px;
+      font-weight: bold;
+      margin: 5px 0 20px;
+      border-radius: 6px;
+    }
+
+    .popup-button {
+      display: block;
+      background: #482514;
+      color: white;
+      padding: 14px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      border-radius: 5px;
+      transition: .2s;
+    }
+
+    .popup-button:hover {
+      background: #70472f;
+    }
+
+    .popup-small {
+      font-size: 10px !important;
+      margin-top: 15px;
+      margin-bottom: 0 !important;
+    }
+
     @media (max-width: 600px) {
-      header { justify-content: center; }
-      nav { justify-content: center; gap: 14px; }
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .popup {
+        padding: 38px 24px;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <div class="logo">MORNING BELL ☕</div>
+
     <nav>
       <a href="index.html">HOME</a>
       <a href="ads.html">OUR ADS</a>
       <a href="landing.html">DISCOVER OUR COFFEE</a>
+      <a href="email.html">JOIN OUR EMAIL LIST</a>
     </nav>
   </header>
 
   <section class="hero">
     <p class="eyebrow">MORNING BELL COFFEE ROASTERS</p>
+
     <h1>Fresh Roasted.<br>Made for Your Morning.</h1>
+
     <p>
       Discover Morning Bell Coffee Roasters through a
       brand awareness campaign designed to introduce the
       brand to potential coffee customers.
     </p>
+
     <a class="button" href="landing.html">DISCOVER OUR COFFEE</a>
     <a class="button" href="ads.html">EXPLORE OUR ADS</a>
   </section>
 
   <main>
+
     <section class="section">
       <h2>About the Project</h2>
+
       <p>
         This project develops a digital display advertising
         campaign for Morning Bell Coffee Roasters. The campaign
@@ -118,12 +291,14 @@
 
     <section class="section">
       <h2>Semester Executive Summary</h2>
+
       <p>
         Throughout the semester, this project will bring
         together campaign strategy, audience targeting,
         advertising design, benchmark estimates, and website
         development for Morning Bell Coffee Roasters.
       </p>
+
       <p>
         The campaign includes four display ad versions and a
         dedicated landing page designed to maintain continuity
@@ -135,18 +310,79 @@
 
     <section class="section">
       <h2>Explore the Campaign</h2>
+
       <p>
         Visit the Ads page to learn about the campaign and
         view the four display ads, or explore the landing page
         created for visitors who interact with the ads.
       </p>
+
       <a class="button" href="ads.html">VIEW THE ADS</a>
       <a class="button" href="landing.html">VISIT LANDING PAGE</a>
+      <a class="button" href="email.html">JOIN OUR EMAIL LIST</a>
     </section>
+
   </main>
 
   <footer>
     MORNING BELL COFFEE ROASTERS · SEMESTER PROJECT
+    <br>
+    <a href="email.html">Join our email list and get 10% off!</a>
   </footer>
+
+
+  <!-- EMAIL SIGN-UP POP-UP -->
+
+  <div class="popup-overlay" id="promoPopup">
+
+    <div class="popup">
+
+      <button
+        class="popup-close"
+        onclick="closePopup()"
+        aria-label="Close pop-up">
+        &times;
+      </button>
+
+      <div class="popup-icon">☕</div>
+
+      <span class="popup-label">
+        A Little Something Extra
+      </span>
+
+      <h2>Good Mornings Start Here.</h2>
+
+      <p>
+        Join the Morning Bell email community for fresh coffee
+        updates, exclusive offers, and a little inspiration
+        delivered straight to your inbox.
+      </p>
+
+      <div class="discount">10% OFF</div>
+
+      <p>
+        Get 10% off your first bag of freshly roasted coffee
+        when you sign up!
+      </p>
+
+      <a class="popup-button" href="email.html">
+        JOIN OUR EMAIL LIST
+      </a>
+
+      <p class="popup-small">
+        No spam, just good coffee. You can unsubscribe anytime.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <script>
+    function closePopup() {
+      document.getElementById("promoPopup").style.display = "none";
+    }
+  </script>
+
 </body>
 </html>
