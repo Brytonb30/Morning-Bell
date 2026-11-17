@@ -1,1 +1,858 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Marketing | Morning Bell Coffee Roasters</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #faf7f2;
+      color: #443329;
+      line-height: 1.6;
+    }
+
+    :root {
+      --brown: #493326;
+      --dark-brown: #342319;
+      --cream: #f3e9dc;
+      --tan: #d8c2a8;
+      --light: #faf7f2;
+      --white: #ffffff;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      background: var(--brown);
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--tan);
+    }
+
+    /* GENERAL */
+
+    .section {
+      padding: 75px 8%;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .section-heading .eyebrow {
+      color: #98775c;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      margin: 10px 0;
+      color: var(--brown);
+    }
+
+    .section-heading p {
+      color: #74665b;
+    }
+
+    /* SIGN-UP FORM */
+
+    .signup-section {
+      background: var(--cream);
+      padding: 70px 8%;
+    }
+
+    .signup-container {
+      max-width: 1050px;
+      margin: auto;
+      background: var(--white);
+      border-radius: 15px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      box-shadow: 0 8px 30px rgba(65, 45, 30, 0.10);
+    }
+
+    .signup-content {
+      padding: 55px 45px;
+    }
+
+    .signup-content .eyebrow {
+      color: #98775c;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .signup-content h1 {
+      font-family: Georgia, serif;
+      font-size: 39px;
+      line-height: 1.2;
+      margin: 15px 0;
+      color: var(--brown);
+    }
+
+    .signup-content p {
+      color: #74665b;
+      margin-bottom: 20px;
+    }
+
+    .offer {
+      background: var(--cream);
+      border-left: 4px solid var(--brown);
+      padding: 13px;
+      margin-bottom: 23px;
+      color: var(--brown);
+      font-weight: bold;
+    }
+
+    .signup-image {
+      background:
+        linear-gradient(rgba(45, 30, 20, .18), rgba(45, 30, 20, .18)),
+        url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1000&q=85")
+        center/cover;
+      min-height: 420px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin: 13px 0 6px;
+      color: var(--brown);
+    }
+
+    input, select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d9cfc4;
+      border-radius: 5px;
+      font-size: 14px;
+      background: white;
+    }
+
+    input:focus, select:focus {
+      outline: 2px solid var(--tan);
+      border-color: var(--brown);
+    }
+
+    .submit-button {
+      width: 100%;
+      background: var(--brown);
+      color: white;
+      border: none;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .submit-button:hover {
+      background: var(--dark-brown);
+    }
+
+    .privacy-note {
+      font-size: 11px;
+      color: #81756a;
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
+    #form-message {
+      font-size: 13px;
+      margin-top: 12px;
+      color: #426344;
+    }
+
+    /* LIST-BUILDING STRATEGY */
+
+    .strategy-section {
+      background: var(--light);
+    }
+
+    .strategy-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .strategy-card {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(65, 45, 30, .07);
+      border-top: 4px solid var(--tan);
+    }
+
+    .strategy-number {
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brown);
+      font-family: Georgia, serif;
+      font-size: 20px;
+      margin-bottom: 17px;
+    }
+
+    .strategy-card h3 {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      margin-bottom: 15px;
+      color: var(--brown);
+    }
+
+    .strategy-card p {
+      font-size: 13px;
+      color: #74665b;
+      margin-bottom: 13px;
+    }
+
+    .strategy-card strong {
+      color: var(--brown);
+    }
+
+    /* EMAIL PREVIEW */
+
+    .email-section {
+      background: var(--cream);
+    }
+
+    .mailbox {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(65, 45, 30, .12);
+    }
+
+    .mailbox-header {
+      background: #f3f1ed;
+      padding: 20px 28px;
+      border-bottom: 1px solid #e2ddd7;
+    }
+
+    .mailbox-header h3 {
+      font-size: 17px;
+      margin-bottom: 12px;
+      color: #403a35;
+    }
+
+    .mailbox-header p {
+      font-size: 13px;
+      color: #625b54;
+      margin: 5px 0;
+    }
+
+    .email-body {
+      padding: 35px;
+    }
+
+    .email-brand {
+      background: var(--cream);
+      text-align: center;
+      padding: 30px 15px;
+      color: var(--brown);
+    }
+
+    .email-brand h2 {
+      font-family: Georgia, serif;
+      font-size: 27px;
+      letter-spacing: 2px;
+    }
+
+    .email-brand p {
+      font-size: 10px;
+      letter-spacing: 4px;
+    }
+
+    .email-image {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .email-copy {
+      padding: 30px 10px;
+      color: #54483d;
+      font-size: 14px;
+    }
+
+    .email-copy h2 {
+      font-family: Georgia, serif;
+      font-size: 27px;
+      color: var(--brown);
+      margin-bottom: 17px;
+    }
+
+    .email-copy p {
+      margin-bottom: 17px;
+    }
+
+    .email-button {
+      display: inline-block;
+      background: var(--brown);
+      color: white;
+      text-decoration: none;
+      padding: 14px 25px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      border-radius: 4px;
+      margin: 8px 0 15px;
+    }
+
+    .email-button:hover {
+      background: var(--dark-brown);
+    }
+
+    .landing-note {
+      font-size: 11px;
+      color: #897c70;
+    }
+
+    /* BRANDED FOOTER */
+
+    .email-footer {
+      background: var(--brown);
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .email-footer h3 {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      letter-spacing: 2px;
+    }
+
+    .email-footer .tagline {
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin: 5px 0 18px;
+      color: var(--tan);
+    }
+
+    .email-footer p {
+      font-size: 12px;
+      margin: 8px 0;
+      color: #f3e9dc;
+    }
+
+    .social-links {
+      margin: 18px 0;
+    }
+
+    .social-links a, .footer-links a {
+      color: white;
+      text-decoration: underline;
+      font-size: 12px;
+      margin: 0 8px;
+    }
+
+    .footer-links {
+      border-top: 1px solid rgba(255,255,255,.25);
+      padding-top: 17px;
+      margin-top: 20px;
+    }
+
+    .copyright {
+      font-size: 10px !important;
+      color: #d8c2a8 !important;
+      margin-top: 20px !important;
+    }
+
+    /* PAGE FOOTER */
+
+    .page-footer {
+      background: var(--dark-brown);
+      color: white;
+      text-align: center;
+      padding: 23px;
+      font-size: 12px;
+    }
+
+    /* RESPONSIVE DESIGN */
+
+    @media (max-width: 800px) {
+      .signup-container {
+        grid-template-columns: 1fr;
+      }
+
+      .signup-image {
+        min-height: 260px;
+        grid-row: 1;
+      }
+
+      .strategy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .signup-content {
+        padding: 35px 25px;
+      }
+
+      .signup-content h1 {
+        font-size: 32px;
+      }
+
+      nav {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .section {
+        padding: 55px 6%;
+      }
+
+      .email-body {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="logo">
+      MORNING BELL
+      <span>COFFEE ROASTERS</span>
+    </div>
+
+    <div>
+      <a href="#signup">Join Our List</a>
+      <a href="#strategy">Our Community</a>
+      <a href="#email">Email Preview</a>
+    </div>
+  </nav>
+
+
+  <!-- STEP 1: SIGN-UP FORM -->
+
+  <section class="signup-section" id="signup">
+
+    <div class="signup-container">
+
+      <div class="signup-content">
+
+        <span class="eyebrow">A Little Something Extra</span>
+
+        <h1>A Better Morning Starts Here.</h1>
+
+        <p>
+          Great coffee, fresh ideas, and a little inspiration
+          delivered straight to your inbox.
+        </p>
+
+        <div class="offer">
+          Join our email list and get 10% off your first bag
+          of freshly roasted coffee!
+        </div>
+
+        <!-- Connect this form to an email service before collecting real sign-ups. -->
+
+        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+              method="POST">
+
+          <label for="firstName">
+            First Name (Optional)
+          </label>
+
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="Enter your first name">
+
+          <label for="email">
+            Email Address (Required)
+          </label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email address"
+            required>
+
+          <label for="preference">
+            What are you most interested in? (Optional)
+          </label>
+
+          <select id="preference" name="preference">
+            <option value="">Select an option</option>
+            <option value="Coffee and new roasts">New coffee and roasts</option>
+            <option value="Drinks and specials">Drinks and specials</option>
+            <option value="Events and community">Local events and community</option>
+          </select>
+
+          <button type="submit" class="submit-button">
+            SIGN ME UP
+          </button>
+
+        </form>
+
+        <p class="privacy-note">
+          By subscribing, you agree to receive occasional emails
+          about new coffee releases, seasonal drinks, special offers,
+          and Morning Bell news. We respect your privacy and will
+          never sell your information or send unwanted spam.
+          You'll receive a confirmation email to verify your subscription.
+          You can unsubscribe at any time.
+        </p>
+
+      </div>
+
+      <div class="signup-image"></div>
+
+    </div>
+
+  </section>
+
+
+  <!-- STEP 2: LIST-BUILDING STRATEGY -->
+
+  <section class="section strategy-section" id="strategy">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">Growing Our Community</span>
+
+      <h2>More Than Just Coffee</h2>
+
+      <p>
+        We want to connect with coffee lovers wherever they are.
+        Here's how Morning Bell will grow its email community
+        and keep subscribers coming back.
+      </p>
+
+    </div>
+
+    <div class="strategy-grid">
+
+      <!-- CUSTOMER GROUP 1 -->
+
+      <div class="strategy-card">
+
+        <div class="strategy-number">01</div>
+
+        <h3>In-Store Customers</h3>
+
+        <p>
+          <strong>Where & How We Collect:</strong><br>
+          QR codes at checkout, on tables, and on printed receipts.
+          Baristas can also invite customers to join. In-store signs
+          will promote the email list.
+        </p>
+
+        <p>
+          <strong>Immediate Value:</strong><br>
+          A 10% discount on their first bag of freshly roasted coffee.
+        </p>
+
+        <p>
+          <strong>Long-Term Value:</strong><br>
+          Subscribers receive seasonal drink announcements,
+          new roast releases, and exclusive customer offers.
+        </p>
+
+      </div>
+
+
+      <!-- CUSTOMER GROUP 2 -->
+
+      <div class="strategy-card">
+
+        <div class="strategy-number">02</div>
+
+        <h3>Iowa State Students</h3>
+
+        <p>
+          <strong>Where & How We Collect:</strong><br>
+          QR code flyers around campus, Instagram promotions,
+          and social media giveaways. Organic posts and targeted
+          social ads will encourage students to sign up.
+        </p>
+
+        <p>
+          <strong>Immediate Value:</strong><br>
+          A digital coupon for a discounted coffee or a free
+          drink upgrade on their next visit.
+        </p>
+
+        <p>
+          <strong>Long-Term Value:</strong><br>
+          Student-focused promotions, seasonal drinks,
+          campus updates, and local event announcements.
+        </p>
+
+      </div>
+
+
+      <!-- CUSTOMER GROUP 3 -->
+
+      <div class="strategy-card">
+
+        <div class="strategy-number">03</div>
+
+        <h3>Online Shoppers</h3>
+
+        <p>
+          <strong>Where & How We Collect:</strong><br>
+          An optional email sign-up during online checkout
+          and a sign-up prompt on the Morning Bell website.
+          Social media links will also direct visitors to the form.
+        </p>
+
+        <p>
+          <strong>Immediate Value:</strong><br>
+          A 10% discount on their first online coffee order.
+        </p>
+
+        <p>
+          <strong>Long-Term Value:</strong><br>
+          New coffee releases, brewing tips, coffee origin
+          stories, and exclusive online ordering offers.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- STEP 3: COMMERCIAL EMAIL PREVIEW -->
+
+  <section class="section email-section" id="email">
+
+    <div class="section-heading">
+
+      <span class="eyebrow">Inside Your Inbox</span>
+
+      <h2>A Morning Bell Email</h2>
+
+      <p>
+        Here's an example of what subscribers can expect
+        to receive a few months after joining our email list.
+      </p>
+
+    </div>
+
+
+    <!-- MAILBOX FRAME -->
+
+    <div class="mailbox">
+
+      <div class="mailbox-header">
+
+        <h3>✉ Inbox</h3>
+
+        <p><strong>From:</strong> Morning Bell Coffee Roasters</p>
+
+        <p><strong>Subject:</strong> Fresh Coffee for Your Morning</p>
+
+        <p><strong>To:</strong> [First Name]</p>
+
+      </div>
+
+
+      <!-- EMAIL CONTENT -->
+
+      <div class="email-body">
+
+        <div class="email-brand">
+
+          <h2>MORNING BELL</h2>
+
+          <p>COFFEE ROASTERS</p>
+
+        </div>
+
+
+        <img
+          class="email-image"
+          src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1200&q=85"
+          alt="Fresh coffee in a cozy coffee shop">
+
+
+        <div class="email-copy">
+
+          <h2>Fresh Roasted. Made for Your Morning.</h2>
+
+          <p>Hi [First Name],</p>
+
+          <p>
+            Whether you're starting a busy day, settling in for
+            a study session, or enjoying a slow morning, we're
+            here to make it a little better.
+          </p>
+
+          <p>
+            At Morning Bell, we believe great coffee brings
+            people together. From freshly roasted beans to
+            your favorite handcrafted drinks, we're proud to
+            be part of your daily routine.
+          </p>
+
+          <p>
+            Ready to find your next favorite coffee?
+            Explore our selection and bring a little Morning Bell
+            home with you.
+          </p>
+
+          <a
+            class="email-button"
+            href="https://morningbellcoffeeroasters.square.site/"
+            target="_blank">
+            SHOP FRESH ROASTED COFFEE
+          </a>
+
+          <p class="landing-note">
+            CTA destination: Morning Bell's online coffee shop.
+          </p>
+
+          <p>Thanks for being part of our community!</p>
+
+          <p>
+            Cheers,<br>
+            The Morning Bell Team
+          </p>
+
+        </div>
+
+
+        <!-- BRANDED EMAIL FOOTER -->
+
+        <div class="email-footer">
+
+          <h3>MORNING BELL</h3>
+
+          <p class="tagline">
+            FRESH ROASTED. MADE FOR YOUR MORNING.
+          </p>
+
+          <p>
+            111 Main Street, Suite 101<br>
+            Ames, IA 50010
+          </p>
+
+          <p>
+            Customer Support:<br>
+            (515) 257-6637<br>
+            sip@morningbellcoffee.com
+          </p>
+
+          <div class="social-links">
+            <a href="https://www.facebook.com/morningbellcoffeeroasters/"
+               target="_blank">Facebook</a>
+
+            <a href="#">Instagram</a>
+          </div>
+
+          <div class="footer-links">
+
+            <a href="#">Privacy Policy</a>
+
+            <a href="mailto:?subject=Check%20out%20Morning%20Bell">
+              Forward to a Friend
+            </a>
+
+            <a href="mailto:sip@morningbellcoffee.com?subject=Unsubscribe">
+              Unsubscribe
+            </a>
+
+          </div>
+
+          <p class="copyright">
+            © 2026 Morning Bell Coffee Roasters. All rights reserved.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WEBSITE FOOTER -->
+
+  <footer class="page-footer">
+
+    <p>
+      Morning Bell Coffee Roasters |
+      Fresh Roasted. Made for Your Morning.
+    </p>
+
+    <p>© 2026 Morning Bell Coffee Roasters</p>
+
+  </footer>
+
+</body>
+</html>
+
