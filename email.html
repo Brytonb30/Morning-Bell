@@ -62,6 +62,7 @@
       text-decoration: none;
       margin-left: 20px;
       font-size: 14px;
+      font-weight: bold;
     }
 
     nav a:hover {
@@ -205,12 +206,6 @@
       color: #81756a;
       margin-top: 15px;
       line-height: 1.6;
-    }
-
-    #form-message {
-      font-size: 13px;
-      margin-top: 12px;
-      color: #426344;
     }
 
     /* LIST-BUILDING STRATEGY */
@@ -425,7 +420,12 @@
       color: white;
       text-align: center;
       padding: 23px;
-      font-size: 12px;
+    }
+
+    .page-footer a {
+      color: var(--tan);
+      text-decoration: none;
+      font-weight: bold;
     }
 
     /* RESPONSIVE DESIGN */
@@ -483,9 +483,10 @@
     </div>
 
     <div>
-      <a href="#signup">Join Our List</a>
-      <a href="#strategy">Our Community</a>
-      <a href="#email">Email Preview</a>
+      <a href="index.html">HOME</a>
+      <a href="ads.html">OUR ADS</a>
+      <a href="landing.html">DISCOVER OUR COFFEE</a>
+      <a href="email.html">JOIN OUR EMAIL LIST</a>
     </div>
   </nav>
 
@@ -512,10 +513,10 @@
           of freshly roasted coffee!
         </div>
 
-        <!-- Connect this form to an email service before collecting real sign-ups. -->
+        <!-- Demo form: connect to an email service before collecting real sign-ups. -->
 
-        <form action="https://formspree.io/f/YOUR_FORMSPREE_ID"
-              method="POST">
+        <form action="#" method="POST"
+              onsubmit="event.preventDefault(); alert('Thanks for your interest! This is a class project demo.');">
 
           <label for="firstName">
             First Name (Optional)
@@ -593,8 +594,6 @@
 
     <div class="strategy-grid">
 
-      <!-- CUSTOMER GROUP 1 -->
-
       <div class="strategy-card">
 
         <div class="strategy-number">01</div>
@@ -621,8 +620,6 @@
 
       </div>
 
-
-      <!-- CUSTOMER GROUP 2 -->
 
       <div class="strategy-card">
 
@@ -651,8 +648,6 @@
 
       </div>
 
-
-      <!-- CUSTOMER GROUP 3 -->
 
       <div class="strategy-card">
 
@@ -703,8 +698,6 @@
     </div>
 
 
-    <!-- MAILBOX FRAME -->
-
     <div class="mailbox">
 
       <div class="mailbox-header">
@@ -719,8 +712,6 @@
 
       </div>
 
-
-      <!-- EMAIL CONTENT -->
 
       <div class="email-body">
 
@@ -766,13 +757,12 @@
 
           <a
             class="email-button"
-            href="https://morningbellcoffeeroasters.square.site/"
-            target="_blank">
-            SHOP FRESH ROASTED COFFEE
+            href="landing.html">
+            DISCOVER OUR COFFEE
           </a>
 
           <p class="landing-note">
-            CTA destination: Morning Bell's online coffee shop.
+            CTA destination: Morning Bell's campaign landing page.
           </p>
 
           <p>Thanks for being part of our community!</p>
@@ -849,10 +839,14 @@
       Fresh Roasted. Made for Your Morning.
     </p>
 
+    <p>
+      <a href="index.html">HOME</a> |
+      <a href="email.html">JOIN OUR EMAIL LIST</a>
+    </p>
+
     <p>© 2026 Morning Bell Coffee Roasters</p>
 
   </footer>
 
 </body>
 </html>
-
